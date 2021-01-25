@@ -60,7 +60,7 @@ favorite_puzzles:
 other_puzzles:
     - name: Holistic
       description: about puzzle games made by increpare. (2019)
-      thumbnail: puzzle_thumb.png
+      thumbnail: holistic_thumb.png
 
     - name: Light Box
       description: about illuminating a mysterious box. (2018)
@@ -76,15 +76,15 @@ other_puzzles:
 
     - name: Thunk!
       description: about making noise with a box. (2017)
-      thumbnail: pie_thumb.png
+      thumbnail: puzzle_thumb.png
 
     - name: Famous by Association
       description: about naming startups in Silicon Valley. (2017)
-      thumbnail: pie_thumb.png
+      thumbnail: fba_thumb.png
 
     - name: Stephen's Speed Run
       description: a PuzzleScript demake of one of my favorite games. (2017)
-      thumbnail: pie_thumb.png
+      thumbnail: sausage_thumb.png
 
     - name: Mystical Seed of Harmony
       description: a text-based adventure. (2012)
