@@ -1,5 +1,5 @@
 name: push-to-nfs
-on: [push]
+on: [push, workflow_dispatch]
 
 jobs:
   build:
@@ -15,5 +15,6 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.PRIVATE_KEY }}
-          source: "_site/*"
+          source: "_site"
           target: "/home/public"
+          strip_components: 1
