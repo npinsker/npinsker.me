@@ -1,3 +1,6 @@
 <div class="fit-image">
     <img src={{ include.src }} onclick="modalShow(this)" />
+    {% if include.caption %}
+        <span class="fit-image-caption">{{ include.caption }}</span>
+    {% endif %}
 </div>

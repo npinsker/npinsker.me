@@ -121,12 +121,22 @@ a {
     border-top: 1px solid #dddddd;
 
     font-size: 1.05rem;
+    line-height: 1.5rem;
     font-family: 'Open Sans', sans-serif;
     color: #666;
 
-    .fit-image img {
-      width: 50%;
+    .fit-image {
       margin-bottom: 30px;
+
+      .fit-image-caption {
+          font-style: italic;
+          font-size: 1rem;
+      }
+    }
+
+    .fit-image img {
+      display: block;
+      width: 50%;
       border: 2px solid #222;
       cursor: pointer;
     }
@@ -237,7 +247,7 @@ $embed-quote-color: #999;
     .back-to-top {
         position: absolute;
         left: -25px;
-        top: 38px;
+        top: 36px;
     }
 }
 
