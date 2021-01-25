@@ -94,7 +94,9 @@ puzzle_tools:
     - name: Crossword Parser
       raw_description: "<b>Crossword Parser</b>: Turn an image of a grid puzzle into a Google Doc in 10 seconds."
       thumbnail: crossword_thumb.png
+      link: /puzzles/crossword
 
     - name: monkey
       raw_description: "<b>Monkey</b>: Lightning-fast conversion to and from common alphabets."
       thumbnail: monkey_thumb.png
+      link: /puzzles/monkey
