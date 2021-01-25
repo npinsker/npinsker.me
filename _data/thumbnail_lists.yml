@@ -46,11 +46,8 @@ other_projects:
 favorite_puzzles:
     - name: Love at 150 km/h
       description: a luge dating sim with three routes. (2021)
-      thumbnail: nova_thumb.png
-
-    - name: Cafe Five
-      description: a gauntlet of micropuzzles to solve with a team. (2021)
-      thumbnail: puzzle_thumb.png
+      thumbnail: luge_thumb.png
+      link: https://perpendicular.institute/static/puzzle_files/eb99f2d80bb30e1e/game.html
 
     - name: Peaches
       description: a game show with Bowsette and her friends. (2019)
@@ -61,29 +58,21 @@ favorite_puzzles:
       thumbnail: pie_thumb.png
 
 other_puzzles:
-    - name: Escape! Hayden Library
-      description: a virtual escape room. (2021)
-      thumbnail: nova_thumb.png
-
-    - name: Green Building
-      description: the only metapuzzle I've ever written. (2021)
-      thumbnail: green_thumb.png
-
     - name: Holistic
       description: about puzzle games made by increpare. (2019)
       thumbnail: puzzle_thumb.png
 
     - name: Light Box
       description: about illuminating a mysterious box. (2018)
-      thumbnail: puzzle_thumb.png
+      thumbnail: lightbox_thumb.png
 
     - name: Word Search
       description: an interactive word-guessing game. (2018)
-      thumbnail: pie_thumb.png
+      thumbnail: wordsearch_thumb.png
 
     - name: Overtime
       description: about 2017's Galactic Puzzle Hunt puzzles. (2018)
-      thumbnail: pie_thumb.png
+      thumbnail: overtime_thumb.png
 
     - name: Thunk!
       description: about making noise with a box. (2017)
@@ -99,13 +88,13 @@ other_puzzles:
 
     - name: Mystical Seed of Harmony
       description: a text-based adventure. (2012)
-      thumbnail: pie_thumb.png
+      thumbnail: seed_thumb.png
 
 puzzle_tools:
     - name: Crossword Parser
       raw_description: "<b>Crossword Parser</b>: Turn an image of a grid puzzle into a Google Doc in 10 seconds."
-      thumbnail: pie_thumb.png
+      thumbnail: crossword_thumb.png
 
     - name: monkey
       raw_description: "<b>Monkey</b>: Lightning-fast conversion to and from common alphabets."
-      thumbnail: pie_thumb.png
+      thumbnail: monkey_thumb.png

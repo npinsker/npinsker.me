@@ -1,0 +1,99 @@
+* {
+  font-family: 'Open Sans', serif;
+}
+
+h1 {
+  text-align: center;
+  margin: 50px 0px 0px 0px;
+  font-family: 'Gentium Basic', serif;
+  color: #333;
+}
+
+h5 {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: normal;
+  color: #999;
+  margin: 0px 0px 30px 0px;
+}
+
+.div_instructions {
+  text-align: center;
+  color: #333;
+  font-size: 1.4rem;
+  margin: 15px 0px;
+}
+
+#parseDisplay {
+  text-align: center; 
+  width: 60%;
+  border: 2px solid #BBB;
+  margin: 50px auto;
+  min-height: 300px;
+  display: flex;
+  padding: 40px;
+}
+
+#parseDisplay div {
+  display: inline-block;
+  text-align: center;
+}
+
+#parseDisplay div div {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#imageDisplay {
+  flex-grow: 5;
+}
+
+#tableDisplay {
+  flex-grow: 5;
+  display: flex;
+}
+
+#arrowDisplay {
+  flex-grow: 1;
+  font-size: 3rem;
+}
+
+#tableDisplay div {
+  display: flex;
+}
+
+#tableDisplay td {
+  width: 100%;
+  border: 1px solid #BBB;
+}
+
+#tableDisplay table {
+  align-self: center;
+  border-spacing: 0px;
+  font-weight: bold;
+  table-layout: fixed;
+}
+
+textarea {
+  cursor: default;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+#credits {
+  margin: 30px 0px;
+  color: #BBB;
+  text-align: center;
+  font-style: italic;
+  font-size: 1.0rem;
+}
+
+#credits div {
+  margin-bottom: 7px;
+}
+

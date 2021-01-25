@@ -1,0 +1,45 @@
+<html>
+<head>
+        <!-- Meta -->
+        <title>Crossword Parser</title>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta content="utf-8" http-equiv="encoding">
+
+    <link href="https://fonts.googleapis.com/css?family=Gentium+Basic:400,700|Open+Sans" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="../wave.ico"/>
+
+        <link rel="stylesheet" href="../css/index.css"/>
+        <link rel="stylesheet" href="crossword.css"/>
+        <link rel="stylesheet" href="animate.css"/>
+
+</head>
+<body>
+  <h1>Crossword Parser</h1>
+  <h5>(paste an image, get a google sheet)</h5>
+  <div class="div_instructions">
+    <span id="instructions">Loading...</span>
+  </div>
+  <textarea id="copyPasteBox"></textarea>
+
+  <div id="parseDisplay">
+    <div id="imageDisplay">
+      <div id="imageContainer"></div>
+    </div>
+    <div id="arrowDisplay">
+      <div>→</div>
+    </div>
+    <div id="tableDisplay">
+      <div id="tableContainer"></div>
+    </div>
+  </div>
+  <canvas id="out" class="out"></div>
+
+  <div id="credits">
+    <div>made by <a href="http://www.npinsker.me">Nathan Pinsker</a></div>
+    <div>(some code adapted from Dan Gulotta's <a href="https://github.com/dgulotta/cross2sheet">cross2sheet</a>)</div>
+  </div>
+</body>
+</html>
+
+<script src="opencv.js"></script>
+<script src="crossword.js"></script>
