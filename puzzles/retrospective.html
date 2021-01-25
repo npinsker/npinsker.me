@@ -4,9 +4,26 @@ title: Mystery Hunt 2021 Retrospective
 width: 800px
 ---
 
+{% include simple-image-modal.html %}
+
 <div class="section-header">Mystery Hunt 2021 Retrospective</div>
 
-<p>These are a collection of reflections on my experience running the 2021 MIT Mystery Hunt.</p>
+<p>These are a collection of thoughts on my experience running the 2021 MIT Mystery Hunt.</p>
+
+<div class="table-of-contents">
+    <div>
+        {% include toc-item.html title="The 2020 Mystery Hunt" %}
+        {% include toc-item.html title="Writing the Theme" %}
+        {% include toc-item.html title="Theme Selection" %}
+        {% include toc-item.html title="Coronavirus & Switching to Remote" %}
+        {% include toc-item.html title="My Work" %}
+        {% include toc-item.html title="On Writing in the Time of COVID-19" %}
+        {% include toc-item.html title="Little Things I Want to Remember" %}
+        {% include toc-item.html title="Shout-outs" %}
+        {% include toc-item.html title="Puzzle Hunts as Art" %}
+        {% include toc-item.html title="Final Thoughts" %}
+    </div>
+</div>
 
 {% include blog-section-header.html title="The 2020 Mystery Hunt" %}
 
@@ -30,12 +47,12 @@ width: 800px
 
 <p>So I coded a quick Discord bot called <a href="https://github.com/Galactic-Infrastructure/HypeBot">HypeBot</a>, which provided an interface to every standard puzzle-solving tool from OneLook to Qat. I built solvers for standard logic puzzles. I included every code sheet under the sun, so people wouldn't have to waste time Googling for the right one.</p>
 
-<img src="/assets/img/retrospective/hypebot1.png" />
+{% include expandable-image.html src="/assets/img/retrospective/hypebothelp.png" %}
 <i>(here's what HypeBot can do)</i>
 
-<img src="/assets/img/retrospective/hypebot2.png" />
-<img src="/assets/img/retrospective/hypebot3.png" />
-<img src="/assets/img/retrospective/hypebot4.png" />
+{% include expandable-image.html src="/assets/img/retrospective/codesheets.png" %}
+{% include expandable-image.html src="/assets/img/retrospective/caesar.png" %}
+{% include expandable-image.html src="/assets/img/retrospective/quinapalus.png" %}
 <i>(HypeBot on the job)</i>
 
 <p>We put someone in charge of bulk food orders. We had two people on duty at all times to encourage (but never mandate) people to switch onto more important puzzles. We implemented spreadsheet macros. Finally, we used the "grace period" right before Hunt to give a 30-minute demo to our entire team, so that everyone saw the tools in action and knew how to use them.</p>
@@ -148,7 +165,7 @@ The MMO theme was finalized and committed to well before COVID-19 forced the hun
     <li><i><b>Green Building Meta</b></i> (a wordplay meta)</li>
     <li><i><b>Can You Deliver 60 Eggs?</b></i> (field goal; a small MMO collect-a-thon)</li>
 </ul>
-(in order of how much I like them)
+<p><i>(in order of how much I like them)</i></p>
 
 <p>I did the technical implementation for all my puzzles and drew art for some, and I commissioned music for Love at 150 km/h from <a href="https://twitter.com/leissMusic">Leiss</a>, an indie composer on Twitter. Most of these puzzles were very time-consuming to implement (Love at 150 km/h and Cafe Five took at least a hundred hours each) so I wasn't able to write very many.</p>
 
@@ -176,7 +193,7 @@ The MMO theme was finalized and committed to well before COVID-19 forced the hun
 
 {% include blog-section-header.html title="Little Things I Want to Remember" %}
 
-<p>#freeyannick is a <del>meme</del> rallying cry that started late at night and grew out of an emote party. We ran around the MMO for a while, then another team all changed their names to "FREE YANNICK" (maybe because he was answering so many hints?) We grew into a sizable mass of people as we ran around the MMO and picked up people who were just standing around. Eventually Yannick logged on, and we all crowded around him and ushered him to the Stata steps to give a speech. (Yannick's speech was: "👋")</p>
+<p>#freeyannick is a <del>meme</del> rallying cry that started late at night and grew out of an emote party. We ran around the MMO for a while, then another team all changed their names to "FREE YANNICK" (they were friends of his). We grew into a sizable mass of people as we ran around the MMO and picked up people who were just standing around. Eventually Yannick logged on, and we all crowded around him and ushered him to the Stata steps to give a speech. Yannick's speech was: "👋"</p>
 
 <p>It was a small thing, but it's something that nobody could have ever predicted would happen. It was a little moment of connection and community between us and a few teams up late. It was exactly the type of silly thing I hoped would happen if we built the MMO.</p>
 
@@ -188,9 +205,15 @@ The MMO theme was finalized and committed to well before COVID-19 forced the hun
 
 <p>Here is the first Damien tornado:</p>
 
+<video controls width="250">
+    <source src="/assets/video/tornado1.mp4" type="video/mp4">
+</video>
+
 <p>Here is the second ("Rainbow Shotgun") Damien Tornado, which replaced it:</p>
 
-[to insert later]
+<video controls width="250">
+    <source src="/assets/video/rainbowtornado.mp4" type="video/mp4">
+</video>
 
 <p>People who were new to the MMO were always very impressed by the incredible Damien Tornado.</p>
 
@@ -236,15 +259,24 @@ Here are my favorites (spoilers, obviously): <a href="https://perpendicular.inst
 
 <div class="hr-separator"></div>
 
-Here's my original favorite quote from the entire MMO:
+<p>Here's my original favorite quote from the entire MMO:</p>
 
-This dialog got changed because it was being said by Cami's character, and Cami didn't want to be sad and angsty over a boyfriend. Also, we had too many students angsting over boyfriends already. So Jon gave Cami a happy face and changed her dialog to:
+{% include expandable-image.html src="/assets/img/retrospective/24-1.png" %}
 
-This dialog is great too. Cami liked it a lot more.
+<p>This dialog got changed because it was being said by Cami's character, and Cami didn't want to be sad and angsty over a boyfriend. Also, we had too many students angsting over boyfriends already. So Jon gave Cami a happy face and changed her dialog:</p>
 
-...still not a fan of lobotomization though.
+{% include expandable-image.html src="/assets/img/retrospective/24-2.png" %}
 
-Other favorites:
+<p>This dialog is great too. Cami liked it a lot more.</p>
+
+<p>...still not a fan of lobotomization though.</p>
+
+<p>Other favorites:</p>
+
+{% include expandable-image.html src="/assets/img/retrospective/toowarm.png" %}
+{% include expandable-image.html src="/assets/img/retrospective/uselessjunk.png" %}
+{% include expandable-image.html src="/assets/img/retrospective/xanderhope.png" %}
+{% include expandable-image.html src="/assets/img/retrospective/copperhero.png" %}
 
 {% include blog-section-header.html title="Shout-outs" %}
 
@@ -267,7 +299,7 @@ Other favorites:
 
 <li><b>Jon and Rahul (Editors)</b>, for being amazing, offering consistently excellent feedback and advice even before the theme was chosen</li>
 
-<li><b>The metapuzzle "core" group (Rahul, Jakob, Jon, Lewis, Curtis, Anderson, Yannick)</b>, for working on MIT.nano, the Infinite, and the Dorm metas, which form an incredible backbone for the hunt</li>
+<li><b>The metapuzzle "core" group (Rahul, Jakob, Jon, Lewis, Curtis, Anderson, Colin)</b>, for working on MIT.nano, the Infinite, and the Dorm metas, which form an incredible backbone for the hunt</li>
 
 <li><b>DD and Andy (Art)</b>, and Lennart, Herman, Cami, Amanda, Joie, Justine, and many others, for developing a crisp, pretty visual style and producing hundreds of high-quality assets to make the MMO truly feel like a playground</li>
 
