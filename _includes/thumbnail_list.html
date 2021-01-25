@@ -1,0 +1,14 @@
+<div class="thumbnail_list">
+    {% for item in site.data.thumbnail_lists[include.content] %}
+        <a class="gameLink" href={{ item.link }}>
+            <div class="gameLine">
+                <div class="circle" style="background-image: url('/assets/img/{{ item.thumbnail }}');"></div>
+                {% if item.raw_description %}
+                <div class="gameText">{{ item.raw_description }}</div>
+                {% else %}
+                <div class="gameText"><b>{{ item.name }}</b>, {{ item.description }}</div>
+                {% endif %}
+            </div>
+        </a>
+    {% endfor %}
+</div>

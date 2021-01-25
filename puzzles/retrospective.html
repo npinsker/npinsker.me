@@ -1,0 +1,348 @@
+---
+layout: default
+title: Mystery Hunt 2021 Retrospective
+width: 800px
+---
+
+<div class="section-header">Mystery Hunt 2021 Retrospective</div>
+
+<p>These are a collection of reflections on my experience running the 2021 MIT Mystery Hunt.</p>
+
+{% include blog-section-header.html title="The 2020 Mystery Hunt" %}
+
+<p>Ever since my first Mystery Hunt, I've wanted to win.</p>
+
+<p>I've never cared about the competitive aspect at all. The reason I wanted to win wasn't for glory, it was always for the prize: <i>the team who wins is the team who writes the next Hunt</i>. And I wanted to win because I wanted to write. I wanted to bring people the happiness that I had had during that and later Hunts.</p>
+
+<p>My friends and I formed Galactic Trendsetters with the eventual goal of "finishing the hunt". We grew, and we recruited. And we finished. Once we did, people questioned whether we should stop expanding the team. What else was there to do? We didn't want to <i>write</i>, did we? The consensus was always "we're not trying to get any larger...but you're always welcome to bring your friends". And so the team kept growing and improving anyway. Our placing in Mystery Hunt continued to improve &mdash; ninth and tenth, and then fifth, and fourth. More and more of us started to think about winning. And we realized that we had a shot at it, if we ever wanted to try.</p>
+
+<div class="hr-separator"></div>
+
+<p>And in 2020, we wanted to try.</p>
+
+<p>We wanted to make a run for the win and see how we did. If it didn't work out, we'd probably go back to hunting more casually.</p>
+
+<p>We didn't want to go anywhere near full "tryhard" &mdash; If there was a logic puzzle that we could solve with a computer, and someone was having a great time solving it by hand, we'd let them solve it by hand. But we did want to allocate people off puzzles that were less important, encourage (but not enforce) sleeping shifts, order food. That sort of thing.</p>
+
+<p>I'm not an amazing puzzle solver. So I thought the best thing I could do to improve our chances was to train the people who were okay, to be even better. And the best way to do that...is to teach them to abuse the hell out of puzzle tools.</p>
+
+<p>Seriously! Automation is critical, especially for less experienced solvers, because people make mistakes. Tiny mistakes can sometimes cost dozens of man-hours if solvers don't think to check their work, so minimizing the risk of error is hugely impactful. Even if people were perfectly accurate, automation also saves seconds, or even minutes, on everything from indexing to image searching &mdash; and that saved time really adds up.</p>
+
+<p>So I coded a quick Discord bot called <a href="https://github.com/Galactic-Infrastructure/HypeBot">HypeBot</a>, which provided an interface to every standard puzzle-solving tool from OneLook to Qat. I built solvers for standard logic puzzles. I included every code sheet under the sun, so people wouldn't have to waste time Googling for the right one.</p>
+
+<img src="/assets/img/retrospective/hypebot1.png" />
+<i>(here's what HypeBot can do)</i>
+
+<img src="/assets/img/retrospective/hypebot2.png" />
+<img src="/assets/img/retrospective/hypebot3.png" />
+<img src="/assets/img/retrospective/hypebot4.png" />
+<i>(HypeBot on the job)</i>
+
+<p>We put someone in charge of bulk food orders. We had two people on duty at all times to encourage (but never mandate) people to switch onto more important puzzles. We implemented spreadsheet macros. Finally, we used the "grace period" right before Hunt to give a 30-minute demo to our entire team, so that everyone saw the tools in action and knew how to use them.</p>
+
+<p>And then we were off.</p>
+
+<div class="hr-separator"></div>
+
+<p>We won.</p>
+
+<p>The hunt was polished, creative, and incredibly fun. I especially enjoyed the experimental rounds, like "Creative Pictures Studios", where the answers were all emoji, and "Safari Adventure", where each puzzle had multiple answers that fed into an amazing meta. I also appreciated the new "puzzle solved" sounds and the abolishment of phone calls, two almost universally positive changes that I hope are carried forward into future years and become tradition.</p>
+
+<p>But this post isn't about that Hunt! Other people have covered it better than I would &mdash; <a href="https://mitadmissions.org/blogs/entry/two-hundred-puzzles/">CJ's post</a> is an awesome read from the perspective of a first-time solver.</p>
+
+{% include blog-section-header.html title="Writing the Theme" %}
+
+<p>So here's a question: why even run a Mystery Hunt, when we can go wherever we want with GPH? Why invest ten times the effort we put into GPH, just so we can lock ourselves into expectations and end up with a product that's less universal and much more transient?</p>
+
+<p>A lot of people would probably say, "you shouldn't". Which is reasonable. Though it does disregard that, as consumers of others' Mystery Hunts, representing tens of thousands of hours of donated time, we really ought to give back at some point.</p>
+
+<p>Anyway, putting that aside, I came up with two answers.</p>
+
+<p>First, the Mystery Hunt is <i>uniquely communal</i>. The effect of thousands of people on a single campus, solving puzzles alongside each other for a single weekend, is powerful in a way that a remote puzzle hunt never will be. Experiences like seeing another team doing the same runaround as you in a remote corner of campus at 2am, or going to Anna's Taqueria and seeing a group jabbering away about a puzzle you were just working on, cause you to remember that you're part of something bigger. They also make the competitive aspect feel more immediate and interesting than competing against faceless teams across the country. Teams haven't interacted much historically, primarily because of fairness and logistics concerns, but Mystery Hunt is the only place where interaction is even possible at all.</p>
+
+<p>Second, the Mystery Hunt is <i>uniquely, unapologetically MIT</i>. From its infinitely deep history, trivia, and endless points of interest, to its administration who supports (or at least tolerates) hundreds of strangers descending on its campus every January, to its permissiveness about running around hallways at 2AM, to its obscure connecting passageways between corners of campus that only hackers know until your runaround took you there, MIT itself is a wonderful, labyrinthine treasure box, perfect beyond belief for an event like this. It's only at MIT that Mystery Hunt is even close to possible, and held anywhere else, Hunt would lose so much of its magic. I certainly don't love some of the things MIT does, but I see Mystery Hunt as a celebration of all that's right with the place.</p>
+
+<p>After running the Galactic Puzzle Hunt for 3 years and pushing the limits of what online hunts could do, Mystery Hunt now presented us a chance to try things that we could never do online. When thinking about themes, I wanted to try as hard as possible to bring out the two angles that made Mystery Hunt unlike any other puzzle hunt in the world.</p>
+
+<div class="hr-separator"></div>
+
+<div class="embed-quote">
+    <p class="main-quote">We want to give [players] an experience they'll remember for the rest of their lives, to stand out from dozens of other amazing Mystery Hunts now and yet to come.</p>
+    <p class="attribution">(from the "MMO Hunt" theme proposal document)</p>
+</div>
+
+<p>I was one of the core members that proposed and developed the MMO theme. With Josh, I wrote the outline of the story that would survive through the entire development process: an alternate MIT, ruined buildings in need of repair, Professor Yew and an opposing professor on the other side, the coin being found in a vending machine as the two worlds were collapsing. I developed a prototype that demonstrated many concepts that would come to define the MMO &mdash; multiplayer, navigation puzzles, affecting the world in ways that could be perceived by others, discovering puzzles by talking to people. I wrote the Green Building meta as part of our theme proposal, and I wrote most of the strongly ambitious language like the quote above.</p>
+
+<p>Among our theme proposal's team, giving people an experience to remember was an explicit goal. For me, that might be an understatement: it was my main goal. I hoped our Mystery Hunt could inspire others and make them wonder, the same way I had wondered at what the event was capable of my first year playing.</p>
+
+<p>In order to do that, I felt the best way to do that was to lean into the things that made Mystery Hunt so unique and special &mdash; thousands of people playing together in one place, passing each other in the halls, thinking about the same things, having the same experiences &mdash; and push that even further. I imagined a Mystery Hunt where you would come together with the puzzle community for a weekend, and experience something, more communally and more "together" than ever before &mdash; and then let it go. It would be a magical experience where you had to have been there, something that wouldn't last past the weekend, thereby being all the more special for it. Ephemerality was a feature, not a bug.</p>
+
+<div class="embed-quote">
+    <p class="main-quote">Even though teams are in the same location for Mystery Hunt, they rarely interact with one another due to a variety of concerns — which is hugely disappointing, because Mystery Hunt is the best place the puzzle community has to forge new connections in person. We think the MMO is an exciting way to foster a sense of community between different teams and promote Mystery Hunt as a truly shared experience, a goal that’s never been attempted before.</p>
+    <p class="attribution">(from the "MMO Hunt" theme proposal document)</p>
+</div>
+
+<p>I bring this up not because I want to assess whether we met our goals, but because I want to point out that this type of great effort doesn't come from nowhere. As a team, we made a conscious decision from the very beginning to push ourselves and our product as hard as we possibly could, because we wanted to make something amazing and memorable. There was a bottomless well of love, work, stress, and a little hurt put into this hunt behind the scenes. If our hunt meant a lot to you, even if it meant a little to you &mdash; thank you so much. Your happiness and enjoyment means the world.</p>
+
+{% include blog-section-header.html title="Theme Selection" %}
+
+<p>We had 9 themes at first. We used two rounds of voting: a first to reduce these to three, and a second to finalize which theme.</p>
+
+<p>With more people contributing to the MMO theme than any other, it was something of a front-runner for most of the process, and was subject to extensive scrutiny. Working on the proposal was, for me, one of the more stressful parts of Hunt.</p>
+
+<div class="hr-separator"></div>
+
+<p>The MMO theme won the vote. Though I'm not sure it would have won if only experienced writers voted. I haven't seen specific votes, so I can't say this for sure, but from our discussions it seemed that most of the people who were strongly against the theme were puzzle veterans, and many people who were the most excited about the theme were people who had never contributed to GPH.</p>
+
+<p>This was actually really heartening to me. It suggested that, although this would be far from a typical puzzle hunt, the idea was still deeply compelling. We had a great mix of people on our 2020 team &mdash; new solvers and veterans; people who just stopped in for an hour, and people who spent the whole weekend hunting; people who relished logic and word puzzles, people who loved scavenger hunts, people who couldn't wait for the interactive puzzles. Unlike GPH, the voting population for this decision was a good sample of our players &mdash; so I think whatever decision we made would have been the right one by our players as well.</p>
+
+{% include blog-section-header.html title="Coronavirus & Switching to Remote" %}
+
+<p>We had talked about coronavirus since March. Back then, Hunt was a full 10 months away, and it felt like we had all the time in the world. Many people thought it wouldn't be an issue. But as the year progressed and America failed to contain the pandemic, it became an inevitability: we would either have to either run hunt remotely, or delay it.</p>
+
+<p>At first, I was sure I wanted to delay. Running Hunt remotely would mean massively compromising the vision that I had already worked so hard to keep alive. We would just be doing another Galactic Puzzle Hunt, but larger. The end product might not be as satisfying, both for solvers and for us &mdash; we would have to give up our fantasies of performing in Kresge, visiting teams in person, running crazy events, and seeing the smiles on people's faces. And the context switch would further stress us all out in a year where most of us had already had quite enough stress, thank you very much.</p>
+
+<p>But delaying wasn't a good option, either. It feels horrible to have a project hanging over your head for so long! The momentum we'd built up would be lost, and would be difficult to regain. Keeping people in the loop would be complicated. People have the rest of their lives to get back to. I had other things I wanted to do. It wouldn't even be certain that we'd be able to run Hunt on-site in 2022, anyway. At some point, everyone has to accept they can't make a perfect product and just move on.</p>
+
+<p>People have lost a lot more than we have in these times. Amidst a global pandemic, even a less-than-ideal communal experience would be extra important to people.</p>
+
+<p>After a lot of discussion, it basically came down to two choices:</p>
+<ul>
+    <li>Run the hunt remotely.</li>
+    <li>Delay the hunt for a year. Run a "potluck" event in January, where we write the metapuzzles, and teams are invited to submit a few puzzles each that fit into them.</li>
+</ul>
+
+<p>People argued for a long time, but I mostly stayed out of it, trying to come to terms with my own feelings about what we should do. My impression was that the people who cared more about the "auxiliary" aspects of Hunt &mdash; runarounds, skits, events &mdash; generally wanted to delay, probably so they could realize their ambitions to the fullest. The people who cared more about the puzzles generally wanted to run hunt as normal, because they were excited to show their work off to the community, and felt it would be excessive to delay despite the most important part of the hunt, the puzzles, being able to be run mostly as normal.</p>
+
+<p>I couldn't make up my mind, so I abstained from voting. "Run Hunt remotely" won by a considerable margin. In retrospect, and after seeing the joy our hunt brought to so many people, I think it was absolutely the right call.</p>
+
+<div class="hr-separator"></div>
+
+The MMO theme was finalized and committed to well before COVID-19 forced the hunt to take place remotely. During theme selection, one of the questions we got was, "isn't the MMO one of the worst fits for a physical hunt?". I honestly think an MMO is an excellent fit for any hunt and any setting, but that aside, there are some amazing ideas we had that could only work on-campus. Here are some things we wanted to try:
+
+<ul>
+    <li>A spot-the-differences puzzle between worlds: e.g. using a virtual and a real "Bars of Color Within Squares"</li>
+    <li>An interactive escape room where you are both in a physical location and logged into a specific location in the MMO</li>
+    <li>A game similar to <a href="https://www.mit.edu/~puzzle/2018/full/puzzle/under_control.html">Under Control</a> where a team member must communicate information through a limited MMO interface. Asymmetric co-operative MMO multiplayer more generally, where one team member is performing a different role from our HQ</li>
+    <li>Runarounds that intertwine the MMO and real life. (We did what we could to facilitate this for our endgame, but ideally, team members would have been running around in both worlds)</li>
+    <li>QR codes that map points in real-MIT to points in ⊥IW. Scanning a code could unlock a puzzle or contribute to a runaround</li>
+</ul>
+
+<p>A lot of these ideas still work perfectly without an MMO, so I hope that some other team will try some of them out someday!</p>
+
+{% include blog-section-header.html title="My Work" %}
+
+<p>Most of my work was focused on the MMO. Around 40% of my time spent on Hunt was work on the Unity client, and another 40% was work on the Go server.</p>
+
+<p>I led development of the server, which coordinated players and communicated information about which doors, students, and field goals they could access. I wrote the majority of our MMO server's code and the Unity code to interact with it. A lot of my time went towards improving performance and reliability. My goal was to be able to support 3,000 concurrent users, with up to 1,500 in a single room at once, which we were able to meet comfortably. (This turned out to be a large overestimate anyway.)</p>
+
+<p>I was also one of the most prolific contributors to the client. In keeping with my desire for ⊥IW to be a "treasure box" full of ideas to discover, I worked hard to expand the scope of the world beyond what was minimally required, and implemented most of the rooms not directly used in puzzle rounds: buildings 9, 10, 13, and 14; the fixed Infinite; the underground lake; the Hacker's Passage. I designed and implemented many of the small "easter egg" features by myself &mdash; whiteboards, emotes, 3D rotating exhibits, ⊥IWhenge, Hacker's Passage computers, step counter guy. I did many other assorted client tasks ranging from modular NPC outfits, to refactors, to UI design, to minor art assets, to team emoji, to assisting teammates with puzzle and event implementation.</p>
+
+<p>I additionally wrote eight puzzles:</p>
+<ul>
+    <li><i><b>Love at 150 km/h</b></i> (a luge athlete dating sim with three full routes)</li>
+    <li><i><b>Catch and Release</b></i> and <i><b>World Fisherman</b></i> (field goals; catch fish throughout the MMO)</li>
+    <li><i><b>Cafe Five</b></i> (a Teamwork Time-style puzzle gauntlet with over 500 micropuzzles)</li>
+    <li><i><b>Escape! Hayden Library</b></i> (an interactive escape room within the MMO)</li>
+    <li><i><b>Stud Finder</b></i> (field goal; an MMO runaround based around identifying pictures)</li>
+    <li><i><b>Green Building Meta</b></i> (a wordplay meta)</li>
+    <li><i><b>Can You Deliver 60 Eggs?</b></i> (field goal; a small MMO collect-a-thon)</li>
+</ul>
+(in order of how much I like them)
+
+<p>I did the technical implementation for all my puzzles and drew art for some, and I commissioned music for Love at 150 km/h from <a href="https://twitter.com/leissMusic">Leiss</a>, an indie composer on Twitter. Most of these puzzles were very time-consuming to implement (Love at 150 km/h and Cafe Five took at least a hundred hours each) so I wasn't able to write very many.</p>
+
+<p>I also wrote, acted, and programmed the Green Building post-meta interaction, did the UI design for the Yew Labs registration site, wrote some of the MMO tutorial video, and I edited around 10 puzzles and testsolved many more.</p>
+
+<div class="hr-separator"></div>
+
+<p>So...maybe you can tell, but I was very busy!</p>
+
+<p>Honestly, I was overworked and constantly stressed. Partly this stemmed from the high standards and lofty goals I had for myself and the project as a whole; the few puzzles I wrote each took a lot of technical implementation and required a staggering amount of content. It also stemmed from the way our organization worked. As Mystery Hunt is a volunteer project, everyone worked on whatever they wanted to. We wanted people to enjoy the project and not quit, so there was a large amount of scope creep, which led to bugs and rough edges. Because we were all friends, we sometimes had trouble saying "no" to people, and we took on more work than we could comfortably support.</p>
+
+<p>This environment was difficult for me to work in, because the outcome of the project is something that we all share, and people doing this often created extra work for others or broke others' stuff in unpredictable ways. As one of the most experienced contributors, I often took on tasks and fixed bugs that others couldn't, and was consistently saddled with a lot of extra work because of this decentralized structure. I spent almost all my free time every day for the month before Hunt (50-60 hours per week, in addition to having a real job) working on the MMO, fixing bugs, adding polish and smoothing the experience.</p>
+
+<p>I'm unbelievably proud of the result, and absurdly happy that everyone loved our hunt so much. Mystery Hunt was an enriching, and deeply rewarding experience for me, and I don't regret my involvement at all, but I could do it over again, I'd try to be less involved, or at least more careful about which parts of Hunt I invest a lot of time into.</p>
+
+{% include blog-section-header.html title="On Writing in the Time of COVID-19" %}
+
+<p>It's easy to make the argument that we "drew the short straw" in having to write Hunt this year. Many community members certainly mentioned it. But the more I look back, the less I agree. This was actually the luckiest year ever to write Hunt.</p>
+
+<p>I got to reconnect with friends I haven't talked to in ages. I had an active, thriving Discord community with tons of people I knew very well and plenty of new people I could make friends with, where at any hour I could pop in to play a game, work on a puzzle, or bounce ideas off someone. In a time when loneliness is so widespread and easy to come by, this was one of the least lonely years of my life. I'm deeply thankful for that.</p>
+
+<p>Not only that, but many people contributed to Hunt in a capacity that I'm sure they wouldn't have had before the pandemic. To be clear, I'd take a hunt on-campus over a remote hunt any day of the week. But it's undeniable that ⊥IW wouldn't have been nearly as large, as beautiful, or as rich as it was if COVID-19 didn't exist. When we decided to run our hunt remotely, I thought at first our hunt would be strictly worse than what we would have run on-campus. But after seeing the way that our team came together in the last month before hunt, and the incredible amount of time and energy everyone contributed, I know now that's far from the case.</p>
+
+<p>And finally, there's the simple truth that most of us could probably use a bright spot or two in their lives right now. I've had a few friends say to me they really wanted a Hunt this year in particular. Having something to focus on and work towards, something that you know will make a lot of people happy, gives you a sense of purpose.</p>
+
+{% include blog-section-header.html title="Little Things I Want to Remember" %}
+
+<p>#freeyannick is a <del>meme</del> rallying cry that started late at night and grew out of an emote party. We ran around the MMO for a while, then another team all changed their names to "FREE YANNICK" (maybe because he was answering so many hints?) We grew into a sizable mass of people as we ran around the MMO and picked up people who were just standing around. Eventually Yannick logged on, and we all crowded around him and ushered him to the Stata steps to give a speech. (Yannick's speech was: "👋")</p>
+
+<p>It was a small thing, but it's something that nobody could have ever predicted would happen. It was a little moment of connection and community between us and a few teams up late. It was exactly the type of silly thing I hoped would happen if we built the MMO.</p>
+
+<p>Who knows how many more of those moments happened where I didn't see them?</p>
+
+<div class="hr-separator"></div>
+
+<p>The <i>Damien Tornado</i> was a tribute to the great Damien and a silly way for me to experiment with the Unity particle system.</p>
+
+<p>Here is the first Damien tornado:</p>
+
+<p>Here is the second ("Rainbow Shotgun") Damien Tornado, which replaced it:</p>
+
+[to insert later]
+
+<p>People who were new to the MMO were always very impressed by the incredible Damien Tornado.</p>
+
+<p>As hunt approached and the MMO was finalized, just for "fun" I added a script (and hid it, and obfuscated its true purpose) that would re-add the tornado whenever someone deleted it. Unfortunately, Herman somehow found the script within two days, and asked me "It seems like this script might be adding the Damien Tornado back to the scene. Is it alright if I delete it?", seeming very nonplussed about the destructive plot he had just uncovered.</p>
+
+<div class="hr-separator"></div>
+
+<p>During the last three to four weeks of Hunt, I worked on Hunt during nearly all of my waking hours. I wasn't able to sleep properly due to overwork and stress. I binged Attack of Titan over the course of these weeks late at night, partially in an attempt to calm down so I could sleep. (It...wasn't very good at that. In fact, it was horrible.)</p>
+
+<p>Still, it was a bright spot in a tough time. Attack on Titan turned out to be one of the best anime I've ever seen, with a compellingly dark plot that's paced and executed nearly flawlessly. I'll fondly remember watching it in the wee hours of the night, and for being a source of happiness and inspiration when I really needed it.</p>
+
+<div class="hr-separator"></div>
+
+<p>I hope that those of you who've never been to MIT still enjoyed the hunt. And I hope that, if you come join us on campus someday, our halls will feel a little more familiar, a little more "yours". I hope you'll feel a bit more connected to the place I called home for four years.</p>
+
+<div class="hr-separator"></div>
+
+<p>One of our sillier early ideas for a post-meta interaction (before hunt went all-remote) is that teams would be given a sofa, and would have to carry it to our HQ.</p>
+
+<div class="hr-separator"></div>
+
+<p>A few more server tidbits:</p>
+
+<p>For performance reasons, scenes would automatically instance themselves if they exceeded 800 people, so that people would only see others on their team. This limit was never reached. (The group photo had 1,200 people in a room, but we disabled this behavior beforehand.)</p>
+
+<p>Every name and whiteboard message was output to Discord and checked by a Galactic team member. We used a  "two strikes" policy &mdash; issue a single warning, then work directly with the captain to resolve the problem or ban the offending IP if the problem continued. Six teams received a warning (five for inappropriate names, one for posting a slight spoiler on a whiteboard), which resolved the issue in every case.</p>
+
+We had a spam-detection threshold to automatically disconnect IPs that were sending too many messages to the server. Early on, this caused an issue when members of ET Phone in Answer (many of whom shared the same IP) were all playing concurrently and would be disconnected. We promptly disabled the threshold, as we had other security measures in place to protect against rogue connections. We saw no aberrant or malicious behavior throughout the weekend.
+
+<div class="hr-separator"></div>
+
+<p>For several weeks leading up to Mystery Hunt, every day at around midnight EST, Anderson would be in our Discord channel, ready to do the daily <a href="https://www.nytimes.com/puzzles/spelling-bee">NYT Spelling Bee</a> puzzle. The consistency of it contributed more to my hunt experience than I'm sure Anderson realizes. I knew I had someone that I could hang out with every single day &mdash; and if I wasn't feeling it, no problem! &mdash; and during the lonely nights of Unity tinkering, it was a welcome and comforting reprieve.</p>
+
+<div class="hr-separator"></div>
+
+<p>As my main priority.was making the MMO as good as it could be, I have a special soft spot for each and every Field Goal. But other than those, my favorite puzzles from our hunt are <a href="https://perpendicular.institute/puzzle/so-you-think-you-can-count/">So You Think You Can Count?</a>, <a href="https://perpendicular.institute/puzzle/just-index/">Just Index</a>, <a href="https://perpendicular.institute/puzzle/the-emperors-new-kitchen/solution/">The Emperor's New Kitchen</a>, and <a href="https://perpendicular.institute/puzzle/nutraumatic/">Nutraumatic</a>. I only saw about half of the puzzles, and I didn't testsolve <a href="https://perpendicular.institute/puzzle/voltage-controlled/">Voltage-Controlled</a>, but otherwise I bet it'd be among my favorites too.</p>
+
+<div class="hr-separator"></div>
+
+Author's notes are one of my favorite things to look over after a hunt, because they're often funny or tell you something about the constructor's personality.
+
+Here are my favorites (spoilers, obviously): <a href="https://perpendicular.institute/puzzle/%E2%8A%A5IW.nano/solution/">⊥IW.nano</a>, <a href="https://perpendicular.institute/puzzle/altered-beasts/solution/">Altered Beasts</a>, <a href="https://perpendicular.institute/puzzle/beverage-blunders/solution/">Beverage Blunders</a>, <a href="https://perpendicular.institute/puzzle/careful-what-you-wish-for/solution/">Careful What You Wish For</a>, <a href="https://perpendicular.institute/puzzle/circles/solution/">Circles</a>, <a href="https://perpendicular.institute/puzzle/clueless/solution/">Clueless</a>, <a href="https://perpendicular.institute/puzzle/divided-is-us/solution/">Divided is Us</a>, <a href="https://perpendicular.institute/puzzle/exactly/solution/">Exactly</a>, <a href="https://perpendicular.institute/puzzle/express-yourself/solution/">Express Yourself</a>, <a href="https://perpendicular.institute/puzzle/harmony/solution/">Harmony</a>, <a href="https://perpendicular.institute/puzzle/hockfield-court/solution/">Hockfield Court</a>, <a href="https://perpendicular.institute/puzzle/how-to-run-a-puzzlehunt/solution/">How to Run a Puzzlehunt</a>, <a href="https://perpendicular.institute/puzzle/in-c/solution/">In C</a>, <a href="https://perpendicular.institute/puzzle/macgregor-house/solution/">MacGregor House</a>, <a href="https://perpendicular.institute/puzzle/pitch-black/solution/">Pitch Black</a>, <a href="https://perpendicular.institute/puzzle/powerful-point/solution/">Powerful Point</a>, <a href="https://perpendicular.institute/puzzle/squee-squee/solution/">Squee Squee</a>, <a href="https://perpendicular.institute/puzzle/voltage-controlled/solution/">Voltage-Controlled</a>.
+
+<div class="hr-separator"></div>
+
+Here's my original favorite quote from the entire MMO:
+
+This dialog got changed because it was being said by Cami's character, and Cami didn't want to be sad and angsty over a boyfriend. Also, we had too many students angsting over boyfriends already. So Jon gave Cami a happy face and changed her dialog to:
+
+This dialog is great too. Cami liked it a lot more.
+
+...still not a fan of lobotomization though.
+
+Other favorites:
+
+{% include blog-section-header.html title="Shout-outs" %}
+
+<p>I can't thank my team enough. Working for so long on a project with people really brings you all closer together.</p>
+
+<p>When we proposed this theme, some people were worried that we couldn't handle it as a team. They said we were underestimating the amount of work involved in a Mystery Hunt &mdash; let alone one with an MMO &mdash; and there were huge unforeseen risks and roadblocks that we couldn't understand yet. Above all else, they were worried about us splitting up, and they didn't want to push our team to breaking point when we had no idea of our limits.</p>
+
+<p>They weren't wrong. It was a huge risk. But it happened to work out this time.</p>
+
+<p>We got through this. We invested tens of thousands of hours, and we made something great that (hopefully) touched the hearts of people in the community. We didn't split up, and we're all going to Hunt together in the future. And we're all still friends.</p>
+
+<p>That's gotta count for something.</p>
+
+<p>Thanks to:</p>
+
+<ul class="thanks-list">
+<li><b>Jakob and Josh (co-Directors)</b>, for being excellent leaders, providing guidance without ever being overbearing, doing tons of unenviable logistic tasks, and for being endlessly patient with me about my stronger opinions</li>
+
+<li><b>Ben (Game Director)</b>, for gently but steadily pushing the MMO forward, always being available, helpful, and aware of things, and doing a ton of underappreciated work (like z-ordering fixes)</li>
+
+<li><b>Jon and Rahul (Editors)</b>, for being amazing, offering consistently excellent feedback and advice even before the theme was chosen</li>
+
+<li><b>The metapuzzle "core" group (Rahul, Jakob, Jon, Lewis, Curtis, Anderson, Yannick)</b>, for working on MIT.nano, the Infinite, and the Dorm metas, which form an incredible backbone for the hunt</li>
+
+<li><b>DD and Andy (Art)</b>, and Lennart, Herman, Cami, Amanda, Joie, Justine, and many others, for developing a crisp, pretty visual style and producing hundreds of high-quality assets to make the MMO truly feel like a playground</li>
+
+<li><b>Lennart</b>, for being a great technical leader, super proactive about teaching others, and writing a great scaffolding for everyone to build on, then switching gears completely and defining a wonderful look and feel for the website</li>
+
+<li><b>Herman</b>, for leading achievements development, being really helpful technically, optimizing the client, doing a ton of MMO work during the last few weeks, proposing Field Goals, and turning them into a treasure chest of jaw-droppingly cool ideas</li>
+
+<li><b>Evan</b>, for working so hard during the last few weeks and adding an insane amount of polish to the MMO, as well as contributing amazing additions like the minimap. The end result wouldn't be nearly as polished or fun without your help</li>
+
+<li><b>Damien</b>, for tons of crucial technical contributions and leadership on the server, and being a great friend and person to work with</li>
+
+<li><b>Lillian, Theo, Ian, Cami, Kat (Story)</b>, and many others, for executing an ambitious and compelling story, putting an absurd amount of love and care into every scene, and (in Lillian's case) continuing to put out piles of awesome content and ideas despite very few macro-level Hunt decisions going her way</li>
+
+<li><b>Steven (Web)</b>, for being an incredibly skilled coder and a joy to work with, handling all of the MMO team's requests with ease, and single-handedly eliminating my worries about the daunting complexity of the website</li>
+
+<li><b>Joanna and Chris</b>, for writing and handling logistics for physical puzzles, which are a significant part of the Mystery Hunt magic, despite an incredible amount going wrong</li>
+
+<li><b>Alan</b>, for important contributions in a lot of different areas, his insight and balanced perspectives, helping me out with a lot of my specific problems, and being supportive, funny, and a great friend</li>
+
+<li><b>Justine, Jingyi, Colin, DD, Kat (Events)</b>, for a creative and fun set of events amid tough circumstances, deepening the communal feel of Hunt and pushing events even further forward by telling a story</li>
+
+<li><b>CJ, Yannick, and Mark</b>, and the rest of our endgame team, for running an awesome endgame that tied our hunt back to MIT in a really satisfying way</li>
+
+<li>Everyone on our team who never studied at MIT, for believing in a theme they didn't have context about</li>
+
+<li>Everyone who pitched in to help with hints, interactions, contact requests, or problems during the weekend of Hunt</li>
+
+<li>Everyone who contributed a puzzle, asset, testsolve, idea, or their time, for helping to make our team's shared dream a reality</li>
+
+<div class="hr-separator"></div>
+
+<p>I'd also like to especially thank Anderson, who put in an absurd amount of work to make the puzzles shine, coming up with ideas and structures that push the limits of what it means to be a Mystery Hunt. He wrote tons of amazing puzzles, including two MMO-based puzzles (Don't Get Eaten! and Pitch Black, which is particularly excellent and unique), the only two MMO puzzles written by someone outside the core development group. Even though we disagreed often, I always came away satisfied because he was so thoughtful and respectful, always listening to my point of view. Anderson has selflessly put everything he had into each and every hunt he's ever run since the first Galactic Puzzle Hunt. To the extent that I cared about giving solvers a completely novel experience, Anderson cared the same amount about pushing the boundaries of the parts they already knew and loved. The event would not be the same without him.</p>
+
+<div class="hr-separator"></div>
+
+<p>Finally, I want to especially thank both Josh and DD, who were endlessly supportive of me. To the extent that I helped make the theme what it is, I couldn't have done it without the support of each of them. I'm so happy they were both on the team and I'll dearly miss working with them.</p>
+
+<p>Josh and I came up with the heart of the MMO theme together, and we spent a lot more time together fleshing it out and making it the best proposal possible. He worked with me on most of the larger puzzles I did, and his input and sense of humor was invaluable. Despite constantly being busy with administrative stuff, he always found time to work on puzzles, play games, or talk to me about anything. In the rare cases that our priorities and viewpoints didn't align, he always listened to my point of view respectfully and I was always happy with the resolution we came to.</p>
+
+<p>DD believed in me and our theme from the very beginning (despite working on another theme) and valued my opinion and input even when others didn't. She was one of few people to reach out to me when I was frustrated and burnt out, and told me that I was doing a good job and she really appreciated what I brought to the table. I constantly doubted myself and what kind of influence I was having all throughout the writing process, and her words meant so much to me. She contributed crazy ideas (like smobsters) that seemed weird at first, but with her consistently great execution, ended up being some of the most delightful things in the hunt. She made me smile more than anyone else on the team.</p>
+
+{% include blog-section-header.html title="Puzzle Hunts as Art" %}
+
+<p>I see puzzles as a form of art. You might not see them as such, but I hope you can at least agree that puzzles can be a form of self-expression. If puzzles are art, then writing a puzzle hunt is kind of like <a href="https://www.eurogamer.net/articles/news240106kojimaart">curating a museum</a>.</p>
+
+<p>So is curating a museum itself a form of art? Is choosing how pieces are arranged and balanced a means of expression in itself? Or is a good movie simply "three great scenes, no bad ones"?</p>
+
+<p><a href="https://www.youtube.com/watch?v=Np5PdpsfINA">Here's</a> a long video on how Demon's Souls, the precursor to the super-popular Dark Souls, was ideated through a process of conscious risk-taking. It's worth watching even if you haven't played any of the games mentioned. Dark Souls went on to permanently redefine how modern games are made. It's probably the most important game in the last 10 years. The Legend of Zelda: Breath of the Wild is another; it, too, took a huge amount of risk by throwing out the Zelda series design playbook of 20 years, and it, too, has completely redefined how games are made. These games were only possible because the developers consciously took risks and turned their back on conventional, "safe" design approaches.</p>
+
+<p>When we were selecting a theme, some people argued that the MMO theme was too unusual, and that we risked disappointing people who expected a "normal" Hunt experience. While GPH was "our hunt" and we should write it exactly as we wanted, our Mystery Hunt was, at least in part, owned by the community. They thought we should try to reliably make our hunters happy rather than taking a risk that might disappoint some people. And while I completely disagree, the point is that I'll joyfully throw whatever "ownership" and "expectations" you may expect me to have over future Hunts into the dump. When you run a Mystery Hunt, it's yours and yours alone. Take risks and follow your dreams. Go nuts.</p>
+
+<p>Run a hunt with 20 events. Run one where you limit teams to 40 people, or one where there's fiendishly difficult "post-hunt" content for the top teams. Run one where winning an event means getting three free puzzle answers. Run a hunt where you have to write and trade puzzles with other teams. Run one where you have to gamble to get ahead. Run one where you have to cooperate with another team over an entire round. I'm not saying these ideas are all good &mdash; but if this year is anything to go by, with enough refinement, they can be zany, refreshing, and above all, memorable. Maybe it won't work out. But as a community, we'll learn, and try again, and make it even better the next time. And know that even if your idea doesn't work, I will always respect you for having tried.</p>
+
+{% include blog-section-header.html title="Final Thoughts" %}
+
+<p>I lived in the same dorm my entire time at MIT, and I had an incredible support network of friends who lived there. The classes older than me graduated, and then I graduated, and this network began to fray as I moved on with my life.</p>
+
+<p>It was deeply sad to lose this network. I couldn't recapture the feeling now, even if I tried my hardest. But it was also really moving, in a way, that I got the chance to be so happy. I felt so thankful for the chance to live where I did, to meet the people I did, to go the places I did, do the things I did.</p>
+
+<p>The halls of ⊥IW are empty now. No teams are taking photographs in Lobby 7; nobody is by the Charles catching fish; nobody is punching in a cluster combo; nobody is waiting on the Dot to greet you. The world we built won't ever be the same again.</p>
+
+<p>We've put so much love into this project, so many thousands of hours of work. It's hard to let it go. Part of me wants to hold on &mdash; maybe one day, if we ever run a Mystery Hunt again &mdash; we could pull out the MMO, dust it off, and build something even greater. See how much farther we can push it, when we're all back at MIT again, we can realize our original dream, and so much of the technical legwork is already behind us. But I know that's not the right thing to do.</p>
+
+<p>It's only a weekend &mdash; a moment! &mdash; but Mystery Hunt is an experience that always comes with sadness when it's over. Every year, for just a little while, I get to be a kid again &mdash; to wander my old school, stay up late, and have a blast with my old friends. Like waking up from a dream, returning to the "real world" afterwards is sobering, jarring. It recaptures a little twinge of loss again and again. And it's sad, but it's moving. And every year, again and again, I feel so very lucky that Mystery Hunt exists.</p>
+
+<p>Embedded in all my work for this hunt is the knowledge that it is temporary, that it won't last. With so many hours of work, I could have done a ton of things. I'm still honestly not sure why I put so much time into Mystery Hunt.</p>
+
+<p>In my work for this hunt is my love for MIT. And part of what made my MIT experience beautiful is that I had to let it go. I wrapped it up in a box and put it away in a drawer somewhere in my mind. But every year in January, I dust it off and pull it out, and it's a bit different, a bit new, but always every bit as meaningful.</p>
+
+<div class="hr-separator"></div>
+
+<p>Thank you for playing.</p>
+
+<p>Mystery Hunt is the last puzzle event I'll be putting a lot of time into organizing. I've done all I wanted to do in this space. I'm incredibly proud of what we created. I don't think we can ever match it again.</p>
+
+<p>I'll continue to attend as a participant for many years to come. I love seeing friends year after year. I love the story, set pieces, and creative themes. I love working and hanging out with friends through the night, and I love the bitingly cold trek back to where I'm staying at an embarrassingly late hour, and tucking into bed, mind whirling and body aching, with absolutely no idea what I'll wake up to.</p>
+
+<div class="hr-separator"></div>
