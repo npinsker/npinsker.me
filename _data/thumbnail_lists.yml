@@ -6,7 +6,7 @@ games:
 
     - name: Arcadia
       description: about a girl in a mysterious arcade.
-      link: http://www.npinsker.me/projects/arcadia
+      link: https://npinsker.itch.io/arcadia
       thumbnail: arcadia_thumb.png
 
     - name: BeatBlock
@@ -16,7 +16,7 @@ games:
 
     - name: Kitter Quest
       description: a puzzling adventure game in a world of cute kittens.
-      link: http://www.npinsker.me/projects/kitter
+      link: https://npinsker.itch.io/kitter-quest
       thumbnail: kitter_thumb.png
 
     - name: The Little Robot that Could
@@ -52,39 +52,48 @@ favorite_puzzles:
     - name: Peaches
       description: a game show with Bowsette and her friends. (2019)
       thumbnail: bowsette_thumb.png
+      link: https://2019.galacticpuzzlehunt.com/puzzle/peaches.html
 
     - name: The Wepp Perflontus Bake Off
       description: about cooking for aliens. (2018)
       thumbnail: pie_thumb.png
+      link: https://2018.galacticpuzzlehunt.com/puzzle/bakeoff.html
 
 other_puzzles:
     - name: Holistic
       description: about puzzle games made by increpare. (2019)
       thumbnail: holistic_thumb.png
+      link: https://2019.galacticpuzzlehunt.com/puzzle/holistic.html
 
     - name: Light Box
       description: about illuminating a mysterious box. (2018)
       thumbnail: lightbox_thumb.png
+      link: https://2018.galacticpuzzlehunt.com/puzzle/light-box.html
 
     - name: Word Search
       description: an interactive word-guessing game. (2018)
       thumbnail: wordsearch_thumb.png
+      link: https://2018.galacticpuzzlehunt.com/puzzle/word-search.html
 
     - name: Overtime
       description: about 2017's Galactic Puzzle Hunt puzzles. (2018)
       thumbnail: overtime_thumb.png
+      link: https://2018.galacticpuzzlehunt.com/puzzle/overtime.html
 
     - name: Thunk!
       description: about making noise with a box. (2017)
       thumbnail: puzzle_thumb.png
+      link: https://2017.galacticpuzzlehunt.com/puzzle/5/5.html
 
     - name: Famous by Association
       description: about naming startups in Silicon Valley. (2017)
       thumbnail: fba_thumb.png
+      link: https://2017.galacticpuzzlehunt.com/puzzle/4/1.html
 
     - name: Stephen's Speed Run
       description: a PuzzleScript demake of one of my favorite games. (2017)
       thumbnail: sausage_thumb.png
+      link: https://2017.galacticpuzzlehunt.com/puzzle/4/5.html
 
     - name: Mystical Seed of Harmony
       description: a text-based adventure. (2012)
