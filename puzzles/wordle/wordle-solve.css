@@ -1,0 +1,88 @@
+* {
+    font-family: 'Open Sans', serif;
+}
+
+:root {
+    --green: #6aaa64;
+    --darkenedGreen: #538d4e;
+    --yellow: #c9b458;
+    --darkenedYellow: #b59f3b;
+    --lightGray: #d8d8d8;
+    --gray: #86888a;
+    --darkenedGray: #939598;
+}
+
+/*
+this CSS is really hacky.
+look at the original wordle CSS instead, it's much better written
+*/
+
+body {
+    font-size: 24px;
+}
+
+.button-gray {
+    background: var(--gray);
+}
+
+.button-yellow {
+    background: var(--yellow);
+}
+
+.button-green {
+    background: var(--green);
+}
+
+.board-container {
+    width: 320px;
+    position: relative;
+    margin: auto;
+}
+
+.board {
+    width: 320px;
+    justify-content: center;
+    align-items: center;
+}
+
+.board-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 5px;
+    height: 60px;
+    margin-bottom: 5px;
+}
+
+.board-submit {
+    position: absolute;
+    font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.5rem;
+    bottom: 10px;
+    right: -50px;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    background: var(--green);
+    color: white;
+    line-height: 2.5rem;
+}
+
+.board-tile {
+    display: inline-flex;
+    font-size: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    border: none;
+}
+
+button:disabled {
+    background: lightgray;
+}
