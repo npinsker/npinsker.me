@@ -55,16 +55,25 @@ body {
 
 .board-submit {
     position: absolute;
-    font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
-    font-size: 1.5rem;
     bottom: 10px;
     right: -50px;
+    font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.5rem;
     width: 40px;
     height: 40px;
     border-radius: 999px;
     background: var(--green);
     color: white;
     line-height: 2.5rem;
+}
+
+.board-ev {
+    position: absolute;
+    bottom: 16px;
+    font-size: 1.2rem;
+    color: gray;
+    right: calc(100% + 20px);
+    cursor: help;
 }
 
 .board-tile {
@@ -81,6 +90,7 @@ button {
     text-align: center;
     color: white;
     border: none;
+    cursor: pointer;
 }
 
 button:disabled {

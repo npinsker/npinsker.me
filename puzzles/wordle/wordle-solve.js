@@ -7,7 +7,7 @@ class WordleSolver extends React.Component {
     super(props);
     this.state = {
         guesses: [[0, 0, 0, 0, 0]],
-        bestWords: ['aeons'],
+        bestWords: [GAME_TREE[0]['guess']],
         treePositions: [0],
         finished: false,
     };
@@ -75,6 +75,16 @@ class WordleSolver extends React.Component {
                     </div>
                 ))}
             </div>
+            {!finished
+                ? <div
+                key="ev"
+                className="board-ev"
+                title="Expected number of guesses left"
+                >
+                    ({currentNode.ev.toFixed(2)})
+                </div>
+                : undefined
+            }
             {!finished
                 ? <button
                 key="check"
