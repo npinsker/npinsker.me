@@ -199,7 +199,7 @@ window.onload = () => {
 
     let border = gridCell['border']
     for (let side of border) {
-      style.push('border-' + side + ':' + borderWidth + 'px solid #000000;')
+      style.push('border-' + side + ':' + borderWidth + 'px solid black;')
     }
 
     return style.join(' ')
