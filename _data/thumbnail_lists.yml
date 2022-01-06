@@ -9,11 +9,6 @@ games:
       link: https://npinsker.itch.io/arcadia
       thumbnail: arcadia_thumb.png
 
-    - name: BeatBlock
-      description: a rhythm platformer with pounding music.
-      link: http://www.npinsker.me/projects/beatblock
-      thumbnail: beatblock_thumb.png
-
     - name: Kitter Quest
       description: a puzzling adventure game in a world of cute kittens.
       link: https://npinsker.itch.io/kitter-quest
@@ -23,11 +18,6 @@ games:
       description: a dungeon crawler shoot-em-up with unique weapons to discover.
       link: https://npinsker.itch.io/the-little-robot-that-could
       thumbnail: robot_thumb.png
-
-    - name: Sugar Rush
-      description: an RPG I made with nine others in a class at MIT.
-      link: http://www.npinsker.me/projects/sugarrush
-      thumbnail: sugarrush_thumb.png
 
 other_projects:
     - name: Nova
@@ -109,3 +99,8 @@ puzzle_tools:
       raw_description: "<b>Monkey</b>: Lightning-fast conversion to and from common alphabets."
       thumbnail: monkey_thumb.png
       link: /puzzles/monkey
+
+    - name: Wordle Solver
+      raw_description: "<b>Wordle solver</b>: Optimally solves <a href=\"https://www.powerlanguage.co.uk/wordle/\">Wordle</a> puzzles."
+      thumbnail: wordle_thumb.png
+      link: /puzzles/wordle
