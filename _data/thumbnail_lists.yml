@@ -1,4 +1,9 @@
 games:
+    - name: The Projection Device
+      description: a massively multiplayer puzzle adventure.
+      link: https://puzzles.mit.edu/2021/projection_device.html
+      thumbnail: coin_thumb.png
+
     - name: Normal Diner
       description: a chaotic WarioWare-style restaurant simulator with a twist.
       link: https://npinsker.itch.io/normal-diner
@@ -32,6 +37,7 @@ other_projects:
 
     - name: Website
       raw_description: <b>This website</b>! Coded from scratch with Jekyll.
+      thumbnail: jekyll_thumb.png
 
 favorite_puzzles:
     - name: Love at 150 km/h
@@ -101,6 +107,6 @@ puzzle_tools:
       link: /puzzles/monkey
 
     - name: Wordle Solver
-      raw_description: "<b>Wordle solver</b>: Optimally solves <a href=\"https://www.powerlanguage.co.uk/wordle/\">Wordle</a> puzzles."
+      raw_description: "<b>Wordle Solver</b>: Optimally solves <a href=\"https://www.powerlanguage.co.uk/wordle/\">Wordle</a> puzzles."
       thumbnail: wordle_thumb.png
       link: /puzzles/wordle
