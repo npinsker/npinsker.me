@@ -10,10 +10,12 @@ class WordleSolver extends React.Component {
         bestWords: [GAME_TREE[0]['guess']],
         treePositions: [0],
         finished: false,
+        hardMode: false,
     };
 
     this.submit = this.submit.bind(this)
     this.getGuessCode = this.getGuessCode.bind(this)
+    this.treeInUse = this.treeInUse.bind(this)
   }
 
   click(row, column) {
@@ -34,19 +36,22 @@ class WordleSolver extends React.Component {
       this.setState({ guesses, bestWords, treePositions, finished: false })
   }
 
+  treeInUse = () => (this.state.hardMode ? GAME_TREE_HARD : GAME_TREE)
+
   getGuessCode = () => [...Array(5).keys()]
       .map(i => this.state.guesses[this.state.guesses.length - 1][i] * Math.pow(3, i))
       .reduce((a, b) => a + b)
 
   submit() {
-      let { bestWords, guesses, treePositions } = this.state
+      let { bestWords, guesses, treePositions, hardMode } = this.state
 
-      let newTreePosition = GAME_TREE[treePositions[treePositions.length - 1]]['results'][this.getGuessCode()]
-      let finished = (Object.keys(GAME_TREE[newTreePosition]['results']).length == 0)
+      let newTreePosition = this.treeInUse()[treePositions[treePositions.length - 1]]['results'][this.getGuessCode()]
+      let finished = (Object.keys(this.treeInUse()[newTreePosition]['results']).length == 0)
+
       this.setState({
           treePositions: [...treePositions, newTreePosition],
-          bestWords: [...bestWords, GAME_TREE[newTreePosition]['guess']],
-          guesses: [...guesses, new Array(5).fill(finished ? 2 : 0)],
+          bestWords: [...bestWords, this.treeInUse()[newTreePosition]['guess']],
+          guesses: [...guesses, guesses[guesses.length - 1].map(g => (finished || (hardMode && g == 2) ? 2 : 0))],
           finished,
       })
   }
@@ -56,11 +61,25 @@ class WordleSolver extends React.Component {
   }
 
   render() {
-    let { bestWords, guesses, treePositions, finished } = this.state
-    let currentNode = GAME_TREE[treePositions[treePositions.length - 1]]
+    let { bestWords, guesses, treePositions, finished, hardMode } = this.state
+    let currentNode = this.treeInUse()[treePositions[treePositions.length - 1]]
 
     return (<div style={{minHeight: '400px'}}>
         <div className="board-container">
+            <div className={hardMode ? "hard-mode red" : "hard-mode"}>
+                <span className="hard-mode-tooltip"
+                 title="There's a tiny chance the solver will need more than 6 guesses (e.g. with WOUND)"
+                 > hard mode </span>
+                <input type="checkbox" value={hardMode} onChange={(e) => {
+                    this.setState({
+                        hardMode: e.target.checked,
+                        guesses: [[0, 0, 0, 0, 0]],
+                        bestWords: [(e.target.checked ? GAME_TREE_HARD : GAME_TREE)[0]['guess']],
+                        treePositions: [0],
+                        finished: false,
+                    });
+                }} />
+            </div>
             <div className="board">
                 {[...Array(guesses.length).keys()].map(r => (
                     <div key={"input-row-" + r} className="board-row">

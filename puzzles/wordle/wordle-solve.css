@@ -23,7 +23,7 @@ body {
 
 h1 {
     text-align: center;
-    margin: 50px 0px;
+    margin: 50px 0px 10px 0px;
     font-family: 'Gentium Basic', serif;
     color: #333;
 }
@@ -46,7 +46,24 @@ h1 {
     margin: auto;
 }
 
+.hard-mode {
+    text-align: center;
+    font-size: 1rem;
+    color: gray;
+    cursor: help;
+}
+
+.red {
+    color: red;
+}
+
+.warning {
+    text-align: center;
+    font-size: 1rem;
+}
+
 .board {
+    margin-top: 40px;
     width: 320px;
     justify-content: center;
     align-items: center;
