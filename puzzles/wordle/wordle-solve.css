@@ -50,16 +50,6 @@ h1 {
     text-align: center;
     font-size: 1rem;
     color: gray;
-    cursor: help;
-}
-
-.red {
-    color: red;
-}
-
-.warning {
-    text-align: center;
-    font-size: 1rem;
 }
 
 .board {

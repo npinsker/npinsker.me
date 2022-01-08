@@ -66,10 +66,8 @@ class WordleSolver extends React.Component {
 
     return (<div style={{minHeight: '400px'}}>
         <div className="board-container">
-            <div className={hardMode ? "hard-mode red" : "hard-mode"}>
-                <span className="hard-mode-tooltip"
-                 title="There's a tiny chance the solver will need more than 6 guesses (e.g. with WOUND)"
-                 > hard mode </span>
+            <div className="hard-mode">
+                <span> hard mode </span>
                 <input type="checkbox" value={hardMode} onChange={(e) => {
                     this.setState({
                         hardMode: e.target.checked,
