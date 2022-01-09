@@ -54,7 +54,8 @@ class WordleSolver extends React.Component {
           guesses: [...guesses, guesses[guesses.length - 1].map(g => (finished || (hardMode && g == 2) ? 2 : 0))],
           finished,
       })
-  }
+
+    }
 
   buttonClass(mod) {
       return ['button-gray', 'button-yellow', 'button-green'][mod]
@@ -65,7 +66,7 @@ class WordleSolver extends React.Component {
     let currentNode = this.treeInUse()[treePositions[treePositions.length - 1]]
 
     return (<div style={{minHeight: '400px'}}>
-        <div className="board-container">
+        <div className="container">
             <div className="hard-mode">
                 <span> hard mode </span>
                 <input type="checkbox" value={hardMode} onChange={(e) => {
@@ -78,40 +79,48 @@ class WordleSolver extends React.Component {
                     });
                 }} />
             </div>
-            <div className="board">
+
+            <div className="board-container">
                 {[...Array(guesses.length).keys()].map(r => (
-                    <div key={"input-row-" + r} className="board-row">
-                        {[...Array(5).keys()].map(c => (
-                            <button
-                            key={c}
-                            className={"board-tile " + this.buttonClass(guesses[r][c])}
-                            onClick={(m) => { this.click(r, c); }}>
-                            {bestWords[r][c]}
-                            </button>
-                        ))}
+                    <div key={"input-row-" + r} className={`board-row ${(!finished && r == guesses.length-1) ? 'current' : ''}`}>
+                        <div className="fg">
+                            {!finished && r == guesses.length - 1
+                                ? <div
+                                className="board-ev"
+                                title="Expected number of guesses left"
+                                >
+                                    ({currentNode.ev.toFixed(2)})
+                                </div>
+                                : null
+                            }
+                        </div>
+                        <div className="board">
+                            <div key={"input-row-" + r} className="board-tile-container">
+                                {[...Array(5).keys()].map(c => (
+                                    <button
+                                    key={c}
+                                    className={"board-tile " + this.buttonClass(guesses[r][c])}
+                                    onClick={(m) => { this.click(r, c); }}>
+                                    {bestWords[r][c]}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="fg">
+                            {!finished && r == guesses.length - 1
+                                ? <button
+                                key="check"
+                                className="board-submit"
+                                onClick={(m) => { this.submit(); }}
+                                disabled={!(this.getGuessCode() in currentNode['results'])}>
+                                    ✓
+                                </button>
+                                : null
+                            }
+                        </div>
                     </div>
                 ))}
             </div>
-            {!finished
-                ? <div
-                key="ev"
-                className="board-ev"
-                title="Expected number of guesses left"
-                >
-                    ({currentNode.ev.toFixed(2)})
-                </div>
-                : undefined
-            }
-            {!finished
-                ? <button
-                key="check"
-                className="board-submit"
-                onClick={(m) => { this.submit(); }}
-                disabled={!(this.getGuessCode() in currentNode['results'])}>
-                    ✓
-                </button>
-                : undefined
-            }
         </div>
     </div>)
   }

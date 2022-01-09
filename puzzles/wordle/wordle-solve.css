@@ -1,7 +1,4 @@
-* {
-    font-family: 'Open Sans', serif;
-}
-
+/* Utils */
 :root {
     --green: #6aaa64;
     --darkenedGreen: #538d4e;
@@ -12,10 +9,17 @@
     --darkenedGray: #939598;
 }
 
-/*
-this CSS is really hacky.
-look at the original wordle CSS instead, it's much better written
-*/
+.button-gray { background-color: var(--gray); }
+.button-yellow { background-color: var(--yellow); }
+.button-green { background: var(--green); }
+
+
+
+/* Styling */
+
+* {
+    font-family: 'Open Sans', serif;
+}
 
 body {
     font-size: 24px;
@@ -28,22 +32,9 @@ h1 {
     color: #333;
 }
 
-.button-gray {
-    background: var(--gray);
-}
-
-.button-yellow {
-    background: var(--yellow);
-}
-
-.button-green {
-    background: var(--green);
-}
-
 .board-container {
-    width: 320px;
-    position: relative;
     margin: auto;
+    margin-top: 50px;
 }
 
 .hard-mode {
@@ -53,48 +44,66 @@ h1 {
 }
 
 .board {
-    margin-top: 40px;
     width: 320px;
-    justify-content: center;
-    align-items: center;
+    max-width: 70%;  /* for phones */
 }
 
 .board-row {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 5px;
-    height: 60px;
     margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+
+}
+
+.board-tile-container {
+    display: flex;
+}
+
+.current .board-tile:hover {
+    opacity: 0.85;
+    transition: 0.2s all;
 }
 
 .board-submit {
-    position: absolute;
-    bottom: 10px;
-    right: -50px;
     font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
     font-size: 1.5rem;
-    width: 40px;
-    height: 40px;
-    border-radius: 999px;
-    background: var(--green);
+    background-color: var(--green);
     color: white;
-    line-height: 2.5rem;
+    padding: 10px 17px;
+    margin-left: 10px;
+    border-radius: 999px;
+ 
+    transform: scale(1);
+    transition: 0.2s all;
+}
+
+.board-submit:hover {
+    transform: scale(1.07);
+    transition: 0.2s all;
+}
+
+.fg {
+    flex-grow: 1;
+    width: 50px;
 }
 
 .board-ev {
-    position: absolute;
-    bottom: 16px;
     font-size: 1.2rem;
     color: gray;
-    right: calc(100% + 20px);
     cursor: help;
+    text-align: right;
+    margin-right: 10px;
 }
 
 .board-tile {
-    display: inline-flex;
     font-size: 2rem;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    height: 60px;
+    width: 60px;
+    margin: 0 2.5px;
+
+    transition: 0.2s all;
+
 }
 
 button {
