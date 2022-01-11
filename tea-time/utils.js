@@ -46,16 +46,6 @@
 
   /** @module webgl-utils */
 
-  function isInIFrame(w) {
-    w = w || topWindow;
-    return w !== w.top;
-  }
-
-  if (!isInIFrame()) {
-    console.log("%c%s", 'color:blue;font-weight:bold;', 'for more about webgl-utils.js see:');  // eslint-disable-line
-    console.log("%c%s", 'color:blue;font-weight:bold;', 'https://webglfundamentals.org/webgl/lessons/webgl-boilerplate.html');  // eslint-disable-line
-  }
-
   /**
    * Wrapped logging function.
    * @param {string} msg The message to log.
@@ -721,46 +711,6 @@
     'WEBKIT_',
   ];
 
-  /**
-   * Given an extension name like WEBGL_compressed_texture_s3tc
-   * returns the supported version extension, like
-   * WEBKIT_WEBGL_compressed_teture_s3tc
-   * @param {string} name Name of extension to look for
-   * @return {WebGLExtension} The extension or undefined if not
-   *     found.
-   * @memberOf module:webgl-utils
-   */
-  function getExtensionWithKnownPrefixes(gl, name) {
-    for (let ii = 0; ii < browserPrefixes.length; ++ii) {
-      const prefixedName = browserPrefixes[ii] + name;
-      const ext = gl.getExtension(prefixedName);
-      if (ext) {
-        return ext;
-      }
-    }
-    return undefined;
-  }
-
-  /**
-   * Resize a canvas to match the size its displayed.
-   * @param {HTMLCanvasElement} canvas The canvas to resize.
-   * @param {number} [multiplier] amount to multiply by.
-   *    Pass in window.devicePixelRatio for native pixels.
-   * @return {boolean} true if the canvas was resized.
-   * @memberOf module:webgl-utils
-   */
-  function resizeCanvasToDisplaySize(canvas, multiplier) {
-    multiplier = multiplier || 1;
-    const width  = canvas.clientWidth  * multiplier | 0;
-    const height = canvas.clientHeight * multiplier | 0;
-    if (canvas.width !== width ||  canvas.height !== height) {
-      canvas.width  = width;
-      canvas.height = height;
-      return true;
-    }
-    return false;
-  }
-
   // Add `push` to a typed array. It just keeps a 'cursor'
   // and allows use to `push` values into the array so we
   // don't have to manually compute offsets
@@ -1328,8 +1278,6 @@
     drawBufferInfo: drawBufferInfo,
     drawObjectList: drawObjectList,
     glEnumToString: glEnumToString,
-    getExtensionWithKnownPrefixes: getExtensionWithKnownPrefixes,
-    resizeCanvasToDisplaySize: resizeCanvasToDisplaySize,
     setAttributes: setAttributes,
     setBuffersAndAttributes: setBuffersAndAttributes,
     setUniforms: setUniforms,

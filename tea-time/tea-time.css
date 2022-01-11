@@ -24,8 +24,12 @@ body {
 }
 
 canvas {
-    width: 50vw;
-    height: 50vh;
+    width: 500px;
+    height: 500px;
     display: block;
 }
-  
+
+.img-thumbnail img {
+    width: 80px;
+    height: 80px;
+}
