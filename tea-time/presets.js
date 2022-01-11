@@ -88,104 +88,97 @@ void main() {
 
 const RAINBOW_NOISE_SHADER_TEXT = `precision mediump float;
 
-float Epsilon = 1e-10;
+#define      PI 3.14159265358979323846264338327950288419716939937511 // mm pie
+#define     TAU 6.28318530717958647692528676655900576839433879875021 // pi * 2
+#define HALF_PI 1.57079632679489661923132169163975144209858469968755 // pi / 2
 
 uniform sampler2D u_tex0;
+uniform sampler2D u_tex1;
 
 uniform float u_time;
-
+uniform vec2 u_resolution;
 varying vec2 v_texcoord;
 
-float saturation = 1.0;
-float value = 0.9;
+//
+// Description : Array and textureless GLSL 2D simplex noise function.
+//      Author : Ian McEwan, Ashima Arts.
+//  Maintainer : stegu
+//     Lastmod : 20110822 (ijm)
+//     License : Copyright (C) 2011 Ashima Arts. All rights reserved.
+//               Distributed under the MIT License. See LICENSE file.
+//               https://github.com/ashima/webgl-noise
+//               https://github.com/stegu/webgl-noise
+//
 
-float map(float value, float old_lo, float old_hi, float new_lo, float new_hi) {
-    return mix(new_lo, new_hi, (value - old_lo) / (old_hi - old_lo));
+vec3 mod289(vec3 x) {
+    return x - floor(x * (1. / 289.)) * 289.;
 }
 
-float hash(float x) {
-    return fract(sin(x) * 43758.5453123);
+vec2 mod289(vec2 x) {
+    return x - floor(x * (1. / 289.)) * 289.;
 }
 
-vec3 gradient(vec3 cell) {
-	float h_i = hash(cell.x);
-    float h_j = hash(cell.y + pow(h_i, 3.0));
-    float h_k = hash(cell.z + pow(h_j, 5.0));
-    float ii = map(fract(h_i + h_j + h_k), 0.0, 1.0, -1.0, 1.0);
-    float jj = map(fract(h_j + h_k), 0.0, 1.0, -1.0, 1.0);
-    float kk = map(h_k, 0.0, 1.0, -1.0, 1.0);
-    return normalize(vec3(ii, jj, kk));
+vec3 permute(vec3 x) {
+    return mod289(((x * 34.) + 1.) * x);
 }
 
-float fade(float t) {
-    float t3 = t * t * t;
-    float t4 = t3 * t;
-    float t5 = t4 * t;
-    return (6.0 * t5) - (15.0 * t4) + (10.0 * t3);
-}
-
-
-float noise(in vec3 coord) {
-    vec3 cell = floor(coord);
-    vec3 unit = fract(coord);
-
-    vec3 unit_000 = unit;
-    vec3 unit_100 = unit - vec3(1.0, 0.0, 0.0);
-    vec3 unit_001 = unit - vec3(0.0, 0.0, 1.0);
-    vec3 unit_010 = unit - vec3(0.0, 1.0, 0.0);
-    vec3 unit_101 = unit - vec3(1.0, 0.0, 1.0);
-    vec3 unit_110 = unit - vec3(1.0, 1.0, 0.0);
-    vec3 unit_011 = unit - vec3(0.0, 1.0, 1.0);
-    vec3 unit_111 = unit - 1.0;
-    vec3 c_000 = cell;
-    vec3 c_100 = cell + vec3(1.0, 0.0, 0.0);
-    vec3 c_001 = cell + vec3(0.0, 0.0, 1.0);
-    vec3 c_101 = cell + vec3(1.0, 0.0, 1.0);
-    vec3 c_010 = cell + vec3(0.0, 1.0, 0.0);
-    vec3 c_110 = cell + vec3(1.0, 1.0, 0.0);
-    vec3 c_011 = cell + vec3(0.0, 1.0, 1.0);
-    vec3 c_111 = cell + 1.0;
-    float wx = fade(unit.x);
-    float wy = fade(unit.y);
-    float wz = fade(unit.z);
-
-    float x000 = dot(gradient(c_000), unit_000);
-    float x100 = dot(gradient(c_100), unit_100);
-    float x001 = dot(gradient(c_001), unit_001);
-    float x101 = dot(gradient(c_101), unit_101);
-    float x010 = dot(gradient(c_010), unit_010);
-    float x110 = dot(gradient(c_110), unit_110);
-    float x011 = dot(gradient(c_011), unit_011);
-    float x111 = dot(gradient(c_111), unit_111);
-
-    float y0 = mix(x000, x100, wx);
-    float y1 = mix(x001, x101, wx);
-    float y2 = mix(x010, x110, wx);
-    float y3 = mix(x011, x111, wx);
-    
-    float z0 = mix(y0, y2, wy);
-    float z1 = mix(y1, y3, wy);
-    
-    return mix(z0, z1, wz);
+float snoise(vec2 v) {
+  const vec4 C = vec4(.211324865405187,.366025403784439,-.577350269189626,.024390243902439);
+  vec2 i  = floor(v + dot(v, C.yy) );
+  vec2 x0 = v -   i + dot(i, C.xx);
+  vec2 i1 = (x0.x > x0.y) ? vec2(1., 0.) : vec2(0., 1.);
+  vec4 x12 = x0.xyxy + C.xxzz;
+  x12.xy -= i1;
+  i = mod289(i);
+  vec3 p = permute( permute( i.y + vec3(0., i1.y, 1. )) + i.x + vec3(0., i1.x, 1. ));
+  vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.);
+  m = m*m;
+  m = m*m;
+  vec3 x = 2. * fract(p * C.www) - 1.;
+  vec3 h = abs(x) - 0.5;
+  vec3 ox = floor(x + 0.5);
+  vec3 a0 = x - ox;
+  m *= 1.79284291400159 - .85373472095314 * ( a0*a0 + h*h );
+  vec3 g;
+  g.x  = a0.x  * x0.x  + h.x  * x0.y;
+  g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+  return 130. * dot(m, g);
 }
 
 vec3 hsv2rgb(vec3 c) {
-    vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
-    vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);
-    return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);
+  vec3 rgb = clamp(abs(mod(c.x*6.+vec3(0.,4.,2.),6.)-3.)-1.,0.,1.);
+  rgb = rgb * rgb * (3. - 2. * rgb);
+  return c.z * mix(vec3(1.), rgb, c.y);
+}
+
+vec2 pq(vec2 uv) {
+  return vec2(atan(uv.x, uv.y) / TAU + .5, length(uv));;
+}
+
+vec4 glorb(vec2 uv, vec2 offset, float radius) {
+  vec2 pq = pq(uv + offset);
+  float r = radius * snoise(uv + u_time * .2);
+  float s = 8. / u_resolution.y;
+  float m = smoothstep(r + s, r - s, pq.y);
+  vec3 c = hsv2rgb(vec3(pq.x, 1., 1.));
+  return vec4(c, 1.) * m;
+}
+
+vec4 field(vec2 uv, vec2 offset, float radius) {
+  vec4 c0 = glorb(uv, offset, radius);
+  vec4 c1 = glorb(uv, offset, radius * .92);
+  return c0 - c1;
 }
 
 void main() {
-    vec4 c = texture2D(u_tex0, v_texcoord);
-    float ca = c.a;
-    c.a = 1.0;
-
-    float h = noise(vec3(
-        5.0 * fract(v_texcoord.x),
-        5.0 * fract(v_texcoord.y),
-        u_time * 0.6
-	));
-    gl_FragColor = vec4(hsv2rgb(vec3(h, saturation, value)), 1);
+  vec2 uv = 2. * v_texcoord.xy - 1.0;
+  vec4 r0 = field(uv, vec2( .0, .0), 1.66);
+  vec4 r1 = field(uv, vec2( .33, .33), 1.66);
+  vec4 r2 = field(uv, vec2( .33, -.33), 1.66);
+  vec4 r3 = field(uv, vec2(-.33, -.33), 1.66);
+  vec4 r4 = field(uv, vec2(-.33, .33), 1.66);
+  vec4 f = r0+r1+r2+r3+r4;
+  gl_FragColor = mix(vec4(vec3(0.), 1.), f, f.a);
 }`;
 
 const PRESET_SHADER_MAP = {

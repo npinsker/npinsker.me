@@ -45,6 +45,13 @@ class TeaTime extends React.Component {
           canvas: glslEditor.shader.canvas,
           glslEditor,
       });
+
+      // Disgusting hack because glslEditor has no flexibility or support
+      // for anything other than fixed-position canvas
+      // I'm surprised the editor itself (which is all I wanted) is so tightly
+      // coupled to the strange canvas behavior
+      let targetCanvas = document.getElementsByClassName("ge_canvas_container")[0];
+      document.getElementById("canvas_container").appendChild(targetCanvas);
   }
 
   setFragmentShaderText = (text) => {
@@ -92,20 +99,26 @@ class TeaTime extends React.Component {
       <div className="two-column">
           <div id="glsl_editor"></div>
           <div>
+            <div style={{textAlign: 'center'}}>
             {images.map((img, i) => (
-                <div className="img-thumbnail">
-                    {img != null ? <img src={images[i].src} /> : undefined}
-                    <input type="file" id="img" name="img" accept="image/*" onChange={(e) => {
+                <div className={"img-thumbnail" + (img == null ? " no-image" : "")}>
+                    {img != null ? <img src={images[i].src} /> : <img src="upload.png" />}
+                    <input className="img-upload" type="file" id="img" name="img" accept="image/*" onChange={(e) => {
                         this.handleImageUpload(i, e.target.files[0]);
                     }} />
                 </div>
             ))}
-            <select name="preset" id="preset" onChange={(e) => { glslEditor.setContent(PRESET_SHADER_MAP[e.target.value]); }}>
-                <option value="threecolor">three color channel</option>
-                <option value="paletteswap">palette swap</option>
-                <option value="golden">golden</option>
-                <option value="rainbow">rainbow noise</option>
-            </select>
+            </div>
+            <div style={{textAlign: 'center', margin: '20px 0px'}}>
+                <b>Presets: </b>
+                <select name="preset" id="preset" onChange={(e) => { glslEditor.setContent(PRESET_SHADER_MAP[e.target.value]); }}>
+                    <option value="threecolor">three color channel</option>
+                    <option value="paletteswap">palette swap</option>
+                    <option value="golden">golden</option>
+                    <option value="rainbow">rainbow noise</option>
+                </select>
+            </div>
+            <div id="canvas_container"></div>
           </div>
       </div>
     )
