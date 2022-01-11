@@ -1,0 +1,31 @@
+/* Utils */
+:root {
+    --green: #6aaa64;
+    --darkenedGreen: #538d4e;
+    --yellow: #c9b458;
+    --darkenedYellow: #b59f3b;
+    --lightGray: #d8d8d8;
+    --gray: #86888a;
+    --darkenedGray: #939598;
+}
+
+.button-gray { background-color: var(--gray); }
+.button-yellow { background-color: var(--yellow); }
+.button-green { background: var(--green); }
+
+/* Styling */
+
+* {
+    font-family: 'Open Sans', serif;
+}
+
+body {
+    font-size: 24px;
+}
+
+canvas {
+    width: 50vw;
+    height: 50vh;
+    display: block;
+}
+  
