@@ -61,21 +61,55 @@ void main() {
 const GOLDEN_GLOW_SHADER_TEXT = `precision mediump float;
 
 uniform sampler2D u_tex0;
-uniform sampler2D u_tex1;
 
 uniform float u_time;
 
 varying vec2 v_texcoord;
 
-float whiteThreshold = 1.35;
+float whiteThreshold = 1.4;
 vec3 goldColor = vec3(0.945, 0.788, 0.090);
+
+vec3 mod289(vec3 x) {
+    return x - floor(x * (1. / 289.)) * 289.;
+}
+
+vec2 mod289(vec2 x) {
+    return x - floor(x * (1. / 289.)) * 289.;
+}
+
+vec3 permute(vec3 x) {
+    return mod289(((x * 34.) + 1.) * x);
+}
+
+float snoise(vec2 v) {
+  const vec4 C = vec4(.211324865405187,.366025403784439,-.577350269189626,.024390243902439);
+  vec2 i  = floor(v + dot(v, C.yy) );
+  vec2 x0 = v -   i + dot(i, C.xx);
+  vec2 i1 = (x0.x > x0.y) ? vec2(1., 0.) : vec2(0., 1.);
+  vec4 x12 = x0.xyxy + C.xxzz;
+  x12.xy -= i1;
+  i = mod289(i);
+  vec3 p = permute( permute( i.y + vec3(0., i1.y, 1. )) + i.x + vec3(0., i1.x, 1. ));
+  vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.);
+  m = m*m;
+  m = m*m;
+  vec3 x = 2. * fract(p * C.www) - 1.;
+  vec3 h = abs(x) - 0.5;
+  vec3 ox = floor(x + 0.5);
+  vec3 a0 = x - ox;
+  m *= 1.79284291400159 - .85373472095314 * ( a0*a0 + h*h );
+  vec3 g;
+  g.x  = a0.x  * x0.x  + h.x  * x0.y;
+  g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+  return 130. * dot(m, g);
+}
 
 void main() {
   vec4 col = texture2D(u_tex0, v_texcoord);
-  vec2 uv1 = vec2(mod(v_texcoord.x + u_time * 0.1, 1.0), mod(v_texcoord.y + u_time * 0.08, 1.0));
-  vec2 uv2 = vec2(mod(v_texcoord.x - u_time * 0.1 + 105.5, 1.0), mod(v_texcoord.y + u_time * 0.08 + 3.4, 1.0));
-  float boost1 = texture2D(u_tex1, uv1).r;
-  float boost2 = texture2D(u_tex1, uv2).r;
+  vec2 uv1 = vec2(v_texcoord.x + u_time * 0.1, v_texcoord.y + u_time * 0.08);
+  vec2 uv2 = vec2(v_texcoord.x - u_time * 0.1 + 105.5, v_texcoord.y + u_time * 0.08 + 3.4);
+  float boost1 = snoise(6.0 * uv1);
+  float boost2 = snoise(6.0 * uv2);
   vec4 white = vec4(1, 1, 1, col.a);
   if (boost1 + boost2 > whiteThreshold) {
       gl_FragColor = white * col.a;
@@ -91,9 +125,6 @@ const RAINBOW_NOISE_SHADER_TEXT = `precision mediump float;
 #define      PI 3.14159265358979323846264338327950288419716939937511 // mm pie
 #define     TAU 6.28318530717958647692528676655900576839433879875021 // pi * 2
 #define HALF_PI 1.57079632679489661923132169163975144209858469968755 // pi / 2
-
-uniform sampler2D u_tex0;
-uniform sampler2D u_tex1;
 
 uniform float u_time;
 uniform vec2 u_resolution;
