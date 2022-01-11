@@ -13,7 +13,7 @@ var hexToRgb = (hex) => {
 
 
 
-class TeaTime extends React.Component {
+class Twinleaf extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -126,4 +126,4 @@ class TeaTime extends React.Component {
 }
 
 const domContainer = document.querySelector('#code_container');
-ReactDOM.render(e(TeaTime), domContainer);
+ReactDOM.render(e(Twinleaf), domContainer);
