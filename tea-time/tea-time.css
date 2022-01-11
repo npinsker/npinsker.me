@@ -15,21 +15,21 @@
 
 /* Styling */
 
-* {
-    font-family: 'Open Sans', serif;
-}
-
 body {
     font-size: 24px;
 }
 
-canvas {
-    width: 500px;
-    height: 500px;
-    display: block;
+.ge_canvas {
+    background-color: transparent !important;
 }
 
 .img-thumbnail img {
     width: 80px;
     height: 80px;
+}
+
+.two-column > div {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
 }
