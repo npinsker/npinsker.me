@@ -2,5 +2,10 @@
 *.swo
 *.swn
 
+*.DS_Store
+vendor/
 _site/
+.bundle/
 .jekyll-cache/
+
+_config.yml
