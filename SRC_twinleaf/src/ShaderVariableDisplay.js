@@ -26,7 +26,7 @@ function ShaderVariableDisplay(props) {
   }
 
   let displaySelectorForType = (v, i) => {
-    if (v[0] == "vec3") {
+    if (v[0] === "vec3") {
       return <>
         <b>{v[1]}</b> <input type="color" value={colorArrayToHexString(v[2])} onChange={(e) => {
           setVariableAtIndex(i, hexStringToColorArray(e.target.value));
@@ -38,7 +38,7 @@ function ShaderVariableDisplay(props) {
   }
 
   return (
-    <div className="two-column">
+    <div className="shader-variable-display">
       {variables.map((v, i) => (
         <div key={i}>
           {displaySelectorForType(v, i)}

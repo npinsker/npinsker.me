@@ -1,4 +1,4 @@
-const MAX_TEXTURES = 8;
+export const CURRENT_VERSION = "0.1";
 
 export const DEFAULT_SHADER_TEXT = `precision mediump float;
 

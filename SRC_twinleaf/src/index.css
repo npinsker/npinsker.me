@@ -12,6 +12,11 @@ code {
     monospace;
 }
 
+nav > div {
+  display: inline-block;
+  margin: 20px;
+}
+
 .img-thumbnail {
   width: 80px;
   height: 80px;
@@ -47,6 +52,23 @@ code {
   left: 0;
 }
 
+.nav-button {
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-button > input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
+  left: 0;
+}
+
 .img-upload::file-selector-button {
   display: none;
 }
@@ -55,4 +77,13 @@ code {
   width: 50%;
   display: inline-block;
   vertical-align: top;
+}
+
+.shader-variable-display {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shader-variable-display > div {
+  flex: 0 0 33.3333%;
 }

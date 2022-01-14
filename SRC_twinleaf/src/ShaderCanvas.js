@@ -54,7 +54,7 @@ const ShaderCanvas = (props) => {
       sandbox.setUniform(item[0], item[1])
     }
 
-  }, [props.frag, images]);
+  }, [props.frag, sandbox, images]);
 
   useEffect(() => {
     if (sandbox == null) {
@@ -74,7 +74,7 @@ const ShaderCanvas = (props) => {
       }
     }
 
-  }, [otherUniforms]);
+  }, [props.frag, sandbox, otherUniforms]);
 
   return (
     <div ref={containerRef} style={{ width: "100%", height: "100%" }}>
