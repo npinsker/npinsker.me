@@ -34,6 +34,8 @@ theme: minima
 plugins:
   - jekyll-feed
 
+google_analytics: G-ZSF9HR3PJ8
+
 exclude:
   - SRC_*
 
