@@ -26,6 +26,13 @@ function ShaderVariableDisplay(props) {
   }
 
   let displaySelectorForType = (v, i) => {
+    if (v[0] === "float") {
+      return <>
+        <b>{v[1]}</b> <input type="range" min="0" max="1" step="0.01" value={v[2]} onChange={(e) => {
+          setVariableAtIndex(i, parseFloat(e.target.value));
+        }} />
+      </>
+    }
     if (v[0] === "vec3") {
       return <>
         <b>{v[1]}</b> <input type="color" value={colorArrayToHexString(v[2])} onChange={(e) => {

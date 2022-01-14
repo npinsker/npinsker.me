@@ -50,6 +50,7 @@ const ShaderCanvas = (props) => {
       if (item[1] == null) {
         continue
       }
+      console.log(item[0], " / ", item[1].length);
 
       sandbox.setUniform(item[0], item[1])
     }

@@ -59,6 +59,7 @@ function Twinleaf() {
         image.onload = () => {
           let newImages = Array.from(images)
           newImages[index] = image
+          console.log("set index " + index + " to " + image.src.length);
           setImages(newImages);
         }
     };
