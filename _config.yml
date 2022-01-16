@@ -37,7 +37,7 @@ plugins:
 google_analytics: G-ZSF9HR3PJ8
 
 exclude:
-  - SRC_*
+  - src/
 
 # Exclude from processing.
 # The following items will not be processed, by default.

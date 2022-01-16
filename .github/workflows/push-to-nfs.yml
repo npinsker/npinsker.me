@@ -7,6 +7,18 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
+      - uses: actions/setup-node@master
+        with:
+          node-version: '16'
+
+      - working-directory: ./src/twinleaf
+        run: npm install
+
+      - working-directory: ./src/twinleaf
+        run: npm run build
+
+      - run: cp -r src/twinleaf/build twinleaf/
+
       - uses:  lemonarc/jekyll-action@master
 
       - name: copy file via ssh password
