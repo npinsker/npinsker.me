@@ -82,17 +82,117 @@ h1 {
     transition: 0.2s all;
 }
 
-.fg {
-    flex-grow: 1;
-    width: 50px;
-}
-
 .board-ev {
     font-size: 1.2rem;
     color: gray;
     cursor: help;
     text-align: right;
     margin-right: 10px;
+    position: relative;
+}
+
+.board-ev .board-remaining-words {
+    opacity: 0%;
+    position: absolute;
+}
+
+.board-ev > span {
+    background: #eee;
+    padding: 2px 6px;
+    border-radius: 12px;
+}
+
+.board-ev > span:hover {
+    background: #ccc;
+    transition: background 0.2s;
+}
+
+.board-ev span:hover + .board-remaining-words {
+    opacity: 100%;
+    transition: opacity 0.2s;
+    top: 40px;
+    right: -81px;
+    width: 200px;
+    border: 1px dashed gray;
+    background: #efe;
+    border-radius: 6px;
+    padding: 5px;
+    font-size: 1rem;
+    z-index: 9999;
+}
+
+.result-square {
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+    margin: 0px 1px;
+}
+
+.result-square-0 {
+    background: var(--gray);
+}
+
+.result-square-1 {
+    background: var(--yellow);
+}
+
+.result-square-2 {
+    background: var(--green);
+}
+
+.result-row-word-done {
+    font-weight: bold;
+    color: #19990d;
+}
+
+.board-remaining-words-header {
+    text-align: center;
+}
+
+.board-remaining-words-subheader {
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+.board-remaining-words-body > div {
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+.board-remaining-words-body {
+    margin: 10px auto 0px auto;
+    display: table;
+    border-spacing: 4px 1px;
+}
+
+.result-row {
+    display: table-row;
+}
+
+.result-row-squares {
+    display: table-cell;
+    text-align: right;
+}
+
+.result-row-words {
+    display: table-cell;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.result-row-words > span {
+    margin: 0px 2px;
+}
+
+.board-remaining-words-footer {
+    text-align: center;
+    font-size: 0.75rem;
+    margin-top: 8px;
+}
+
+.fg {
+    flex-grow: 1;
+    width: 50px;
 }
 
 .board-tile {
