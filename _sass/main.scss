@@ -93,7 +93,7 @@ a {
     background-color: rgba(0,0,0,0.55);
 
     img {
-        border: 1px solid black;
+        border: 4px dashed rgba(255, 255, 255, 0.4);
         filter: drop-shadow(0 0 0.75rem black);
         max-height: 75%;
     }
