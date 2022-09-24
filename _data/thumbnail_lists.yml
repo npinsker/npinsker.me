@@ -1,7 +1,7 @@
 games:
     - name: The Projection Device
       description: a massively multiplayer puzzle adventure.
-      link: https://puzzles.mit.edu/2021/projection_device.html
+      link: /mmo
       thumbnail: coin_thumb.png
 
     - name: Normal Diner
