@@ -9,6 +9,11 @@ games:
       link: https://npinsker.itch.io/normal-diner
       thumbnail: diner_thumb.png
 
+    - name: Large Pizza Factory
+      description: an automation game.
+      link: https://npinsker.itch.io/large-pizza-factory
+      thumbnail: pizza_thumb.png
+
     - name: Arcadia
       description: about a girl in a mysterious arcade.
       link: https://npinsker.itch.io/arcadia
