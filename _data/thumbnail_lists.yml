@@ -30,25 +30,21 @@ games:
       thumbnail: robot_thumb.png
 
 other_projects:
-    - name: Nova
-      description: a higher-level library for writing 2D games in Haxe.
-      link: http://www.github.com/npinsker/nova
-      thumbnail: nova_thumb.png
-
-    - name: Galactic Puzzle Hunt
-      raw_description: I help organize and write puzzles for the annual <b>Galactic Puzzle Hunt.</b><br/>(Link is to a page of all the puzzles and tools I've written.)
+    - name: Puzzle Hunts
+      raw_description: Lots of work for various <b>puzzle hunts</b> over the years...
       link: /puzzles
       thumbnail: puzzle_thumb.png
 
-    - name: Website
-      raw_description: <b>This website</b>! Coded from scratch with Jekyll.
-      thumbnail: jekyll_thumb.png
-
 favorite_puzzles:
+    - name: Conjuri's Quest
+      description: a mysterious roguelike with a shapeshifting map. (2023)
+      thumbnail: conjuri_thumb.png
+      link: https://puzzles.mit.edu/2023/puzzlefactory.place/conjuris-quest
+
     - name: Love at 150 km/h
       description: a luge dating sim with three routes. (2021)
       thumbnail: luge_thumb.png
-      link: https://perpendicular.institute/static/puzzle_files/eb99f2d80bb30e1e/game.html
+      link: https://puzzles.mit.edu/2021/static/puzzle_files/eb99f2d80bb30e1e/game.html
 
     - name: Peaches
       description: a game show with Bowsette and her friends. (2019)
@@ -59,46 +55,6 @@ favorite_puzzles:
       description: about cooking for aliens. (2018)
       thumbnail: pie_thumb.png
       link: https://2018.galacticpuzzlehunt.com/puzzle/bakeoff.html
-
-other_puzzles:
-    - name: Holistic
-      description: about puzzle games made by increpare. (2019)
-      thumbnail: holistic_thumb.png
-      link: https://2019.galacticpuzzlehunt.com/puzzle/holistic.html
-
-    - name: Light Box
-      description: about illuminating a mysterious box. (2018)
-      thumbnail: lightbox_thumb.png
-      link: https://2018.galacticpuzzlehunt.com/puzzle/light-box.html
-
-    - name: Word Search
-      description: an interactive word-guessing game. (2018)
-      thumbnail: wordsearch_thumb.png
-      link: https://2018.galacticpuzzlehunt.com/puzzle/word-search.html
-
-    - name: Overtime
-      description: about 2017's Galactic Puzzle Hunt puzzles. (2018)
-      thumbnail: overtime_thumb.png
-      link: https://2018.galacticpuzzlehunt.com/puzzle/overtime.html
-
-    - name: Thunk!
-      description: about making noise with a box. (2017)
-      thumbnail: puzzle_thumb.png
-      link: https://2017.galacticpuzzlehunt.com/puzzle/5/5.html
-
-    - name: Famous by Association
-      description: about naming startups in Silicon Valley. (2017)
-      thumbnail: fba_thumb.png
-      link: https://2017.galacticpuzzlehunt.com/puzzle/4/1.html
-
-    - name: Stephen's Speed Run
-      description: a PuzzleScript demake of one of my favorite games. (2017)
-      thumbnail: sausage_thumb.png
-      link: https://2017.galacticpuzzlehunt.com/puzzle/4/5.html
-
-    - name: Mystical Seed of Harmony
-      description: a text-based adventure. (2012)
-      thumbnail: seed_thumb.png
 
 puzzle_tools:
     - name: Crossword Parser
